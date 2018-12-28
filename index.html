@@ -123,8 +123,13 @@ else if (item.gsx$paypalprice.$t == "Call" || item.gsx$paypalprice.$t == "call" 
 var tr2 = document.createElement("TR");
 var td5 = document.createElement("TD");
 var td6 = document.createElement("TD");
+	if(item.gsx$seemorelink.$t !== ""){
 td5.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />") + '&nbsp;<a href="' + item.gsx$seemorelink.$t.replace(/\n/g, "<br />") + '">See&nbsp;pictures</a>';
-td6.innerHTML = item.gsx$paypalprice.$t.replace(/\n/g, "<br />");
+	}
+	else {
+		td5.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />");
+	}
+	td6.innerHTML = item.gsx$paypalprice.$t.replace(/\n/g, "<br />");
 td6.setAttribute("style", "text-align: center;");
 tr2.appendChild(td5);
 tr2.appendChild(td6);
