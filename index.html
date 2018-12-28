@@ -109,7 +109,7 @@ if (item.gsx$onoff.$t == "TRUE") {
 if (item.gsx$paypalprice.$t == "Sold out" || item.gsx$paypalprice.$t == "Sold Out" || item.gsx$paypalprice.$t == "sold out" ) {
 var tr2 = document.createElement("TR");
 var td7 = document.createElement("TD");
-td7.innerHTML = "Sold Out";
+td7.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />");
 td7.setAttribute("style", "text-align: center; width: 100%");
 tr2.appendChild(td7);
 document.getElementById(id).appendChild(tr2);
