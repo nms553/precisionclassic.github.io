@@ -109,7 +109,7 @@ if (item.gsx$onoff.$t == "TRUE") {
 if (item.gsx$paypalprice.$t == "Sold out" || item.gsx$paypalprice.$t == "Sold Out" || item.gsx$paypalprice.$t == "sold out" ) {
 var tr2 = document.createElement("TR");
 var td7 = document.createElement("TD");
-td7.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />");
+td7.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />") + '&nbsp;<a href="' + item.gsx$seemorelink.$t.replace(/\n/g, "<br />") + '">See&nbsp;pictures</a>';
 td7.setAttribute("style", "text-align: center; width: 100%");
 tr2.appendChild(td7);
 document.getElementById(id).appendChild(tr2);
@@ -118,7 +118,7 @@ else if (item.gsx$paypalprice.$t == "Call" || item.gsx$paypalprice.$t == "call" 
 var tr2 = document.createElement("TR");
 var td5 = document.createElement("TD");
 var td6 = document.createElement("TD");
-td5.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />");
+td5.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />") + '&nbsp;<a href="' + item.gsx$seemorelink.$t.replace(/\n/g, "<br />") + '">See&nbsp;pictures</a>';
 td6.innerHTML = item.gsx$paypalprice.$t.replace(/\n/g, "<br />");
 td6.setAttribute("style", "text-align: center;");
 tr2.appendChild(td5);
