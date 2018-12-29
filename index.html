@@ -72,7 +72,7 @@ $.getJSON(sheetUrl, function(data)
   function(item, index) 
   {
   var x = document.getElementById("table");
-  x.innerHTML += '<tr><td width="17%"><div align="center">' + item.gsx$modelinfo.$t.replace(/\n/g, "<br />") + '</div></td><td style="background-color:white" width="15%">' + '<a href="' + item.gsx$picturelink.$t + '"><img style="max-width:100%" src="' + item.gsx$thumbnaillink.$t + '"></a></td><td width="17%"><div align="center">' + item.gsx$description.$t.replace(/\n/g, "<br />") + '</div></td><td><table width="100%" border="1" id="' + item.gsx$itemnumber.$t + '"></table></td></tr>';
+  x.innerHTML += '<tr><td width="17%"><div align="center">' + item.gsx$modelinfo.$t.replace(/\n/g, "<br />") + '</div></td><td style="background-color:white; text-align:center;" width="15%">' + '<a href="' + item.gsx$picturelink.$t + '"><img style="max-width:100%" src="' + item.gsx$thumbnaillink.$t + '"></a></td><td width="17%"><div align="center">' + item.gsx$description.$t.replace(/\n/g, "<br />") + '</div></td><td><table width="100%" border="1" id="' + item.gsx$itemnumber.$t + '"></table></td></tr>';
 
 
 
