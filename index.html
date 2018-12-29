@@ -7,6 +7,11 @@ body {
 	width: 975px;
 	margin: auto;
 }
+
+table, td {
+	text-align: center;
+}
+	
 g {
 	color: rgb(128, 128, 0);
 	font-weight: bold;
@@ -72,7 +77,7 @@ $.getJSON(sheetUrl, function(data)
   function(item, index) 
   {
   var x = document.getElementById("table");
-  x.innerHTML += '<tr><td width="17%"><div align="center">' + item.gsx$modelinfo.$t.replace(/\n/g, "<br />") + '</div></td><td style="background-color:white; text-align:center;" width="15%">' + '<a href="' + item.gsx$picturelink.$t + '"><img style="max-width:100%" src="' + item.gsx$thumbnaillink.$t + '"></a></td><td width="17%"><div align="center">' + item.gsx$description.$t.replace(/\n/g, "<br />") + '</div></td><td><table width="100%" border="1" id="' + item.gsx$itemnumber.$t + '"></table></td></tr>';
+  x.innerHTML += '<tr><td width="17%">' + item.gsx$modelinfo.$t.replace(/\n/g, "<br />") + '</td><td style="background-color:white;" width="15%">' + '<a href="' + item.gsx$picturelink.$t + '"><img style="max-width:100%" src="' + item.gsx$thumbnaillink.$t + '"></a></td><td width="17%">' + item.gsx$description.$t.replace(/\n/g, "<br />") + '</td><td><table width="100%" border="1" id="' + item.gsx$itemnumber.$t + '"></table></td></tr>';
 
 
 
@@ -97,15 +102,15 @@ $.getJSON(sheetUrl, function(data)
   if (y != null) {
   
   	if (item.gsx$paypalprice.$t == "" || item.gsx$paypalprice.$t == "SO" || item.gsx$paypalprice.$t == "blank") {
-     y.innerHTML += '<tr><td><div align="center">' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</div></td></tr>';
+     y.innerHTML += '<tr><td>' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</td></tr>';
     }
     else if (item.gsx$paypalprice.$t == "Call" || item.gsx$paypalprice.$t == "call" || item.gsx$paypalprice.$t == "Sold out" || item.gsx$paypalprice.$t == "sold out" || item.gsx$paypalprice.$t == "Sold Out" || item.gsx$paypalprice.$t == "On hold" || item.gsx$paypalprice.$t == "on hold" || item.gsx$paypalprice.$t == "On Hold") {
-     y.innerHTML += '<tr><td>' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</td><td width="100"><div align="center">' + item.gsx$paypalprice.$t + '</div></td></tr>';
+     y.innerHTML += '<tr><td>' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</td><td width="100">' + item.gsx$paypalprice.$t + '</td></tr>';
     }
     else {
     
     y.innerHTML += '<tr><td>' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</td><td width="100">' 
-+ '<div align="center"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal" style="margin-bottom:0;">'
++ '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal" style="margin-bottom:0;">'
 + '<input alt="Make payments with PayPal - it is fast, free and secure!" border="0" name="I8" src="https://www.paypal.com/en_US/i/btn/x-click-but22.gif" type="image">'
 + '<input name="add" type="hidden" value="1">'
 + '<input name="cmd" type="hidden" value="_cart">'
@@ -122,7 +127,7 @@ $.getJSON(sheetUrl, function(data)
 + '<input name="weight" type="hidden" value="'
 + "10" + '">'
 + '<input name="weight_unit" type="hidden" value="lbs">'
-+ '</form></div>';
++ '</form>';
     + '</td></tr>';
     }
   
