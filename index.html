@@ -105,11 +105,11 @@ $.getJSON(sheetUrl, function(data)
      y.innerHTML += '<tr><td>' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</td></tr>';
     }
     else if (item.gsx$paypalprice.$t == "Call" || item.gsx$paypalprice.$t == "call" || item.gsx$paypalprice.$t == "Sold out" || item.gsx$paypalprice.$t == "sold out" || item.gsx$paypalprice.$t == "Sold Out" || item.gsx$paypalprice.$t == "On hold" || item.gsx$paypalprice.$t == "on hold" || item.gsx$paypalprice.$t == "On Hold") {
-     y.innerHTML += '<tr><td style="text-align:center;">' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</td><td width="100">' + item.gsx$paypalprice.$t + '</td></tr>';
+     y.innerHTML += '<tr><td style="text-align:left;">' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</td><td width="100">' + item.gsx$paypalprice.$t + '</td></tr>';
     }
     else {
     
-    y.innerHTML += '<tr><td style="text-align:center;">' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</td><td width="100">' 
+    y.innerHTML += '<tr><td style="text-align:left;">' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</td><td width="100">' 
 + '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal" style="margin-bottom:0;">'
 + '<input alt="Make payments with PayPal - it is fast, free and secure!" border="0" name="I8" src="https://www.paypal.com/en_US/i/btn/x-click-but22.gif" type="image">'
 + '<input name="add" type="hidden" value="1">'
