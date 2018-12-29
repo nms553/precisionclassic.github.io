@@ -97,10 +97,10 @@ $.getJSON(sheetUrl, function(data)
   if (y != null) {
   
   	if (item.gsx$paypalprice.$t == "" || item.gsx$paypalprice.$t == "SO" || item.gsx$paypalprice.$t == "blank") {
-     y.innerHTML += '<tr><td><p align="center">' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</p></td></tr>';
+     y.innerHTML += '<tr><td><div align="center">' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</div></td></tr>';
     }
     else if (item.gsx$paypalprice.$t == "Call" || item.gsx$paypalprice.$t == "call" || item.gsx$paypalprice.$t == "Sold out" || item.gsx$paypalprice.$t == "sold out" || item.gsx$paypalprice.$t == "Sold Out" || item.gsx$paypalprice.$t == "On hold" || item.gsx$paypalprice.$t == "on hold" || item.gsx$paypalprice.$t == "On Hold") {
-     y.innerHTML += '<tr><td>' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</td><td width="100">' + item.gsx$paypalprice.$t + '</td></tr>';
+     y.innerHTML += '<tr><td>' + item.gsx$desc.$t.replace(/\n/g, "<br />") + '</td><td width="100"><div align="center">' + item.gsx$paypalprice.$t + '</div></td></tr>';
     }
     else {
     
