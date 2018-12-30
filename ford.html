@@ -1,199 +1,493 @@
-﻿<html>
 
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<style>
-body {
-	width: 975px;
-	margin: auto;
-  color: #C0C0C0
+<!-- saved from url=(0045)http://www.keepingitgreen.com/sbi/pc/ford.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+</head><body bgcolor="003399" link="cccccc" text="cccccc" vlink="cccccc"><div class="style1" style="width: 1005px; margin: auto;">
+	<meta content="en-us" http-equiv="Content-Language">
+	
+	<meta content="John Deere, precision, precisions, classic, classics, series, Agco, AC, Allis, Chalmers, Oliver, Massey-Harris, 
+MH, Ford, Farmall, IH, International, ertl" name="keywords">
+	<meta content="Huge selection of new and retired Ford, Ertl, Precision Classic Series" name="description">
+	<title>Ford Precision Tractors and Farm Toy Availability</title>
+	<style type="text/css">
+.ms-grid2-1100-even {
+	border-right: none;
+	border-left: .75pt solid black;
+	border-top: .75pt solid black;
+	border: .75pt solid #C0C0C0;
 }
-g {
-	color: rgb(128, 128, 0);
+.style1 {
+	text-align: center;
+}
+.auto-style2 {
+	border-collapse: collapse;
+}
+.auto-style3 {
+	border: .75pt solid #C0C0C0;
+	text-align: center;
+}
+.auto-style5 {
+	border: .75pt solid #C0C0C0;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+.auto-style6 {
+	border: .75pt solid #C0C0C0;
+	font-weight: bold;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+.auto-style7 {
+	border: .75pt solid #C0C0C0;
+	text-align: left;
+	font-size: large;
+	color: #C0C0C0;
+}
+.auto-style8 {
+	border: .75pt solid #C0C0C0;
+	color: #C0C0C0;
+}
+.auto-style9 {
+	color: #C0C0C0;
+}
+.auto-style12 {
+	color: #C0C0C0;
 	font-weight: bold;
 }
-	
-sp {
-	color: rgb(255, 0, 0);
+.auto-style13 {
+	border: .75pt solid #C0C0C0;
+	text-align: center;
+	color: #C0C0C0;
+}
+.auto-style15 {
+	border: .75pt solid #C0C0C0;
 	font-weight: bold;
+	text-align: center;
+	color: #C0C0C0;
 }
-</style>
-
-
-
-</head>
-
-<body bgcolor="003399" content="en-us" http-equiv="Content-Language">
-	<br />
-<img border="0" src="http://www.keepingitgreen.com/sbi/pc/pcbanner.jpg" width="100%">
-		<p align="center">Click here for 
-		<a href="http://www.keepingitgreen.com/sbi/pc/ih.htm"><font color="#FF0000">Case IH,</font></a>
-		<a href="http://www.keepingitgreen.com/sbi/pc/ac.htm"><font color="#FF9966">Agco</font></a> and
-		<a href="http://www.keepingitgreen.com/sbi/pc/ford.htm"><font color="#0000FF">Ford</font></a> precisions.
-		<br /><br />
-		PrecisionClassic.com has partnered with CS Weathering 
-		to take the details of the Precision lines to the next level. Click each 
-		model listed for samples of CS Weathering finished products.
-		<a href="http://www.keepingitgreen.com/sbi/pc/weathered/4450/4450.html" target="_blank">John Deere 4450</a> -
-		<a href="http://www.keepingitgreen.com/sbi/pc/weathered/1570/1570.html" target="_blank">Case 1570</a> -
-		<a href="http://www.keepingitgreen.com/sbi/pc/weathered/4840/4840.html" target="_blank">John Deere 4840 </a>-
-		<a href="http://www.keepingitgreen.com/sbi/pc/weathered/5488/5488.html" target="_blank">Case IH 5488</a> -
-		<a href="http://www.keepingitgreen.com/sbi/pc/weathered/4440/4440.html" target="_blank">John Deere 4440</a> -
-		<a href="http://www.keepingitgreen.com/sbi/pc/weathered/856/856.html" target="_blank">Farmall 856</a> -
-		<a href="http://www.keepingitgreen.com/sbi/pc/weathered/560/560.html" target="_blank">Farmall 460 </a>
-		Please contact us for details.</p>
-	<br />
-
-
-
-<table width="100%" border="1" id="table">
-
-
-<!-- <p id="p"></p> -->
-
-</table>
-
-<script>
-$(function()
-{
-var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1WA8kUKQImLMi-6aFWJcGyb6N9wwqmL5kZTJGjIPMLYo/4/public/full?alt=json';
-$.getJSON(sheetUrl, function(data)
-{
-  var entry = data.feed.entry;
-  console.log(entry);
-  
-  entry.forEach(
-  function(item, index) 
-  {
-  if(item.gsx$order.$t !== "")
-{
-id = item.gsx$order.$t;
-  var table = document.getElementById("table");
-  
-//table1.setAttribute("border", 1);
-//table1.setAttribute("id", "turd");
-var tr1 = document.createElement("TR");
-var td1 = document.createElement("TD");
-var td2 = document.createElement("TD");
-var td3 = document.createElement("TD");
-var td4 = document.createElement("TD");
-var table2 = document.createElement("TABLE");
-
-td1.innerHTML = item.gsx$modelinfo.$t.replace(/\n/g, "<br />");
-td2.innerHTML = '<img src="' + item.gsx$picturelink.$t.replace(/\n/g, "<br />") + '"></img>';
-td3.innerHTML = item.gsx$description.$t.replace(/\n/g, "<br />");
-
-table2.setAttribute("id", id);
-table2.setAttribute("border", 1);
-table2.setAttribute("width", "100%");
-
-td1.setAttribute("style", "text-align: center; width: 155px");
-td2.setAttribute("style", "background-color: white; text-align: center; width: 100px");
-td3.setAttribute("style", "text-align: center; width: 165px");
-
-tr1.appendChild(td1);
-tr1.appendChild(td2);
-tr1.appendChild(td3);
-tr1.appendChild(td4);
-td4.appendChild(table2);
-table.appendChild(tr1);
-}
-
-if (item.gsx$paypalprice.$t == "Sold out" || item.gsx$paypalprice.$t == "Sold Out" || item.gsx$paypalprice.$t == "sold out" ) {
-var tr2 = document.createElement("TR");
-var td7 = document.createElement("TD");
-
-td7.innerHTML = "Sold Out";
-td7.setAttribute("style", "text-align: center; width: 100%");
-
-tr2.appendChild(td7);
-document.getElementById(id).appendChild(tr2);
-
-}
-
-else if (item.gsx$paypalprice.$t == "Call" || item.gsx$paypalprice.$t == "call") {
-var tr2 = document.createElement("TR");
-var td5 = document.createElement("TD");
-var td6 = document.createElement("TD");
-
-td5.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />");
-td6.innerHTML = item.gsx$paypalprice.$t.replace(/\n/g, "<br />");
-td6.setAttribute("style", "text-align: center;");
-
-tr2.appendChild(td5);
-tr2.appendChild(td6);
-document.getElementById(id).appendChild(tr2);
-}
-
-
-else if (item.gsx$desc.$t !== "") {
-var tr2 = document.createElement("TR");
-var td5 = document.createElement("TD");
-var td6 = document.createElement("TD");
-
-if(item.gsx$seemorelink.$t !== ""){
-td5.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />") + '&nbsp;<a href="' + item.gsx$seemorelink.$t.replace(/\n/g, "<br />") + '">See&nbsp;pictures</a>';
-}
-
-else {
-td5.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />");
-}
-
-td6.innerHTML = '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal" style="margin-bottom:0;">'
-+ '<input alt="Make payments with PayPal - it is fast, free and secure!" border="0" name="I8" src="https://www.paypal.com/en_US/i/btn/x-click-but22.gif" type="image">'
-+ '<input name="add" type="hidden" value="1">'
-+ '<input name="cmd" type="hidden" value="_cart">'
-+ '<input name="business" type="hidden" value="precisionclassic@schweissguth.com">'
-+ '<input name="item_name" type="hidden" value="'
-+ item.gsx$paypaldesc.$t + '">'
-+ '<input name="item_number" type="hidden" value="'
-+ item.gsx$paypalitem.$t + '">'
-+ '<input name="amount" type="hidden" value="'
-+ item.gsx$paypalprice.$t + '">'
-+ '<input name="no_note" type="hidden" value="1">'
-+ '<input name="currency_code" type="hidden" value="USD">'
-+ '<input name="lc" type="hidden" value="US">'
-+ '<input name="weight" type="hidden" value="'
-+ item.gsx$weight.$t + '">'
-+ '<input name="weight_unit" type="hidden" value="lbs">'
-+ '</form>';
-
-
-
-td6.setAttribute("style", "text-align: center;");
-td5.setAttribute("style", "width: 100%");
-
-tr2.appendChild(td5);
-tr2.appendChild(td6);
-document.getElementById(id).appendChild(tr2);
-}
+	.auto-style18 {
+		border: .75pt solid #C0C0C0;
+		text-align: left;
+		color: #C0C0C0;
+	}
+	</style>
 
 
 
 
+<p align="center">
+<img border="0" height="107" src="./ford_files/pcbanner.jpg" width="1000"><b></b></p><b>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+	<input name="display" type="hidden" value="1">
+	<input name="cmd" type="hidden" value="_cart">
+	<input name="business" type="hidden" value="precisionclassic@schweissguth.com">
+	<input alt="Make payments with your credit card online" border="0" name="submit" src="./ford_files/view_cart.gif" type="image">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Click here for <a href="http://www.keepingitgreen.com/sbi/pc/pc.htm">
+	<font color="#00FF00">DEERE</font></a><font color="#00FF00"> </font>
+	<a href="http://www.keepingitgreen.com/sbi/pc/ac.htm"><font color="#CC3300">
+	AGCO</font></a> or <a href="http://www.keepingitgreen.com/sbi/pc/ih.htm">
+	<font color="#FF0000">CASE IH</font></a> precisions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<i>Last updated Dec 17 2018</i></form>
+<br>
+<table class="auto-style2" style="width: 100%">
+	<!-- fpstyle: 17,011000000 -->
+	<tbody><tr>
+		<td class="auto-style15">#1 #352</td>
+		<td class="auto-style6">
+		<img class="auto-style9" height="72" src="./ford_files/352.jpg" width="120"></td>
+		<td class="auto-style15" style="width: 150px">Model 9N</td>
+		<td class="auto-style8">(0106051674) Opened, undisplayed, w/ plastic, rough 
+		box, steering wheel does not turn front wheels <strong>$120</strong></td>
+		<td class="auto-style3">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input alt="Buy now with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" height="23" name="I1" src="./ford_files/x-click-but22.gif" type="image" width="87">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="item_name" type="hidden" value="D17 w/ picker exc unopened box">
+			<input class="auto-style9" name="item_number" type="hidden" value="0106051674">
+			<input class="auto-style9" name="amount" type="hidden" value="120.00">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input name="weight" type="hidden" value="5">
+			<input name="weight_unit" type="hidden" value="lbs">
+		</form>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" colspan="5">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="auto-style15">#2 #354</td>
+		<td class="auto-style6">
+		<img class="auto-style9" height="75" src="./ford_files/354.jpg" width="120"></td>
+		<td class="auto-style15" style="width: 150px">Model 2N on steel</td>
+		<td class="auto-style8">(0211101140) Opened, displayed, rough box
+		<strong>$75</strong></td>
+		<td class="auto-style3">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input alt="Buy now with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" height="23" name="I2" src="./ford_files/x-click-but22.gif" type="image" width="87">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="item_name" type="hidden" value="#2 2N Ford, rough box">
+			<input class="auto-style9" name="item_number" type="hidden" value="0211101140">
+			<input class="auto-style9" name="amount" type="hidden" value="75.00">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input name="weight" type="hidden" value="5">
+			<input name="weight_unit" type="hidden" value="lbs">
+		</form>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" colspan="5">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="auto-style15">#3 #362</td>
+		<td class="auto-style6">
+		<img class="auto-style9" height="69" src="./ford_files/362.jpg" width="120"></td>
+		<td class="auto-style15" style="width: 150px">Model 8N</td>
+		<td class="auto-style18">(03110218150) Opened, undisplayed nice box, 
+		slight flap tear <strong>$275</strong></td>
+		<td class="auto-style13"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input alt="Buy now with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" name="I5" src="./ford_files/x-click-but22.gif" type="image">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="item_name" type="hidden" value="Ford 8N, opened">
+			<input class="auto-style9" name="item_number" type="hidden" value="03110218150">
+			<input class="auto-style9" name="amount" type="hidden" value="250.00">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input name="weight" type="hidden" value="6">
+			<input name="weight_unit" type="hidden" value="lbs">
+		</form>
+</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" colspan="5">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="auto-style15" rowspan="2">#4 #3019</td>
+		<td class="auto-style6" rowspan="2">
+		<img class="auto-style9" height="115" src="./ford_files/3019.jpg" width="120"></td>
+		<td class="auto-style15" rowspan="2" style="width: 150px">Dearborn Blade 
+		and Plow</td>
+		<td class="auto-style8">(0412211536) Opened, undisplayed condition, torn 
+		box <strong>$60</strong></td>
+		<td class="auto-style3">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input alt="Buy now with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" name="I5" src="./ford_files/x-click-but22.gif" type="image">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="item_name" type="hidden" value="#4 Dearborn blade and plow, opened">
+			<input class="auto-style9" name="item_number" type="hidden" value="0412211536">
+			<input class="auto-style9" name="amount" type="hidden" value="60.00">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input name="weight" type="hidden" value="3">
+			<input name="weight_unit" type="hidden" value="lbs">
+		</form>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">(0402151740) Opened, displayed, very clean, good 
+		box <strong>$60</strong></td>
+		<td class="auto-style3">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input alt="Buy now with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" name="I5" src="./ford_files/x-click-but22.gif" type="image">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="item_name" type="hidden" value="#4 Dearborn blade and plow, opened">
+			<input class="auto-style9" name="item_number" type="hidden" value="0402151740">
+			<input class="auto-style9" name="amount" type="hidden" value="60.00">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input name="weight" type="hidden" value="3">
+			<input name="weight_unit" type="hidden" value="lbs">
+		</form>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" colspan="5">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="auto-style15">#5 #355</td>
+		<td class="auto-style6"><font color="white">
+		<a href="http://home.centurytel.net/dutzow/web/precisionseries/ford/large/naa.jpg" target="_blank">
+		<img class="auto-style9" height="54" src="./ford_files/355.jpg" width="120"></a></font></td>
+		<td class="auto-style15" style="width: 150px">NAA Jubilee</td>
+		<td class="ms-grid2-1100-even"><span class="auto-style9">(355A) Few on hand 
+		in nice unopened boxes </span><span class="auto-style12">$160</span></td>
+		<td class="auto-style3">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input alt="Buy now with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" name="I7" src="./ford_files/x-click-but22.gif" type="image">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="item_name" type="hidden" value="#5 NAA excellent, unopened box">
+			<input class="auto-style9" name="item_number" type="hidden" value="355A">
+			<input class="auto-style9" name="amount" type="hidden" value="160.00">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input name="weight" type="hidden" value="6">
+			<input name="weight_unit" type="hidden" value="lbs">
+		</form>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" colspan="5">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="auto-style15" rowspan="2">#6 #383</td>
+		<td class="auto-style6" rowspan="2">
+		<img class="auto-style9" height="77" src="./ford_files/383.jpg" width="120"></td>
+		<td class="auto-style15" rowspan="2" style="width: 150px">Model 641 with 
+		Loader </td>
+		<td class="ms-grid2-1100-even"><span class="auto-style9">(383D) Unopened, 
+		minor box dings </span><span class="auto-style12">$110&nbsp;</span><span class="auto-style9">
+		</span></td>
+		<td class="auto-style3">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input alt="Buy now with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" height="23" name="I8" src="./ford_files/x-click-but22.gif" type="image" width="87">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="item_name" type="hidden" value="#6 641 w/ loader">
+			<input class="auto-style9" name="item_number" type="hidden" value="383D">
+			<input class="auto-style9" name="amount" type="hidden" value="110.00">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input name="weight" type="hidden" value="7">
+			<input name="weight_unit" type="hidden" value="lbs">
+		</form>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style8"><font class="auto-style9">(383A) Unopened unit in 
+		excellent box <b>$125</b></font><span class="auto-style9"> </span></td>
+		<td class="auto-style3">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input alt="Buy now with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" height="23" name="I9" src="./ford_files/x-click-but22.gif" type="image" width="87">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="item_name" type="hidden" value="#6 641 w/ loader">
+			<input class="auto-style9" name="item_number" type="hidden" value="383A">
+			<input class="auto-style9" name="amount" type="hidden" value="125.00">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input name="weight" type="hidden" value="7">
+			<input name="weight_unit" type="hidden" value="lbs">
+		</form>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" colspan="5">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="auto-style15">#7 #13503</td>
+		<td class="auto-style6">
+		<img class="auto-style9" height="72" src="./ford_files/13503.jpg" width="120"></td>
+		<td class="auto-style15" style="width: 150px">Model 5000</td>
+		<td class="auto-style8">(07110914150) Unopened, slightly shelf worn box
+		<strong>$295</strong></td>
+		<td class="auto-style3">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="amount" type="hidden" value="295.00">
+			<input class="auto-style9" name="item_number" type="hidden" value="07110914150">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="item_name" type="hidden" value="Ford 5000 - Unopened">
+			<input name="weight" type="hidden" value="8">
+			<input name="weight_unit" type="hidden" value="lbs">
+			<input alt="Make payments with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" name="I10" src="./ford_files/x-click-but22.gif" type="image"></form>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style13" colspan="5">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="auto-style15" rowspan="2">#8 #13574</td>
+		<td class="auto-style6" rowspan="2">
+		<img class="auto-style9" height="90" src="./ford_files/13574.jpg" width="120"></td>
+		<td class="auto-style15" rowspan="2" style="width: 150px">Model 640</td>
+		<td class="auto-style8">(0805181679) Opened, undisplayed condition, fair 
+		to good box <strong>$145 </strong></td>
+		<td class="auto-style3">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input alt="Buy now with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" height="23" name="I11" src="./ford_files/x-click-but22.gif" type="image" width="87">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="item_name" type="hidden" value="#8 640 tractor">
+			<input class="auto-style9" name="item_number" type="hidden" value="0805181679">
+			<input class="auto-style9" name="amount" type="hidden" value="145.00">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input name="weight" type="hidden" value="8">
+			<input name="weight_unit" type="hidden" value="lbs">
+		</form>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">(08022616110) Unopened, nice box with slight corner 
+		ding <strong>$170</strong></td>
+		<td class="auto-style3">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input alt="Buy now with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" height="23" name="I12" src="./ford_files/x-click-but22.gif" type="image" width="87">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="item_name" type="hidden" value="#8 640 tractor">
+			<input class="auto-style9" name="item_number" type="hidden" value="08022616110">
+			<input class="auto-style9" name="amount" type="hidden" value="170.00">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input name="weight" type="hidden" value="8">
+			<input name="weight_unit" type="hidden" value="lbs">
+		</form>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style7" colspan="5" style="height: 56px">Other Precisions
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style15" rowspan="3">#13630</td>
+		<td class="auto-style5" rowspan="3">
+		<img border="0" class="auto-style9" height="76" src="./ford_files/fordspec1.jpg" width="120"></td>
+		<td class="auto-style15" rowspan="3" style="width: 150px">Ford NAA Golden 
+		Jubilee (50TH Anniversary Special Edition) </td>
+		<td class="auto-style8">(NAA02051685) Opened, fair box, undisplayed
+		<strong>$150</strong></td>
+		<td class="auto-style3">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input alt="Buy now with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" height="23" name="I13" src="./ford_files/x-click-but22.gif" type="image" width="87">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="item_name" type="hidden" value="50TH Anniversary NAA tractor">
+			<input class="auto-style9" name="item_number" type="hidden" value="NAA02051685">
+			<input class="auto-style9" name="amount" type="hidden" value="150.00">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input name="weight" type="hidden" value="8">
+			<input name="weight_unit" type="hidden" value="lbs">
+		</form>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style8">50TH02241785) Opened, good box, undisplayed
+		<strong>$160 </strong></td>
+		<td class="auto-style3">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+			<input alt="Buy now with PayPal - it&#39;s fast, free and secure!" border="0" class="auto-style9" height="23" name="I13" src="./ford_files/x-click-but22.gif" type="image" width="87">
+			<input class="auto-style9" name="add" type="hidden" value="1">
+			<input class="auto-style9" name="cmd" type="hidden" value="_cart">
+			<input class="auto-style9" name="business" type="hidden" value="precisionclassic@schweissguth.com">
+			<input class="auto-style9" name="item_name" type="hidden" value="50TH Anniversary NAA tractor precision">
+			<input class="auto-style9" name="item_number" type="hidden" value="50TH02241785">
+			<input class="auto-style9" name="amount" type="hidden" value="160.00">
+			<input class="auto-style9" name="no_note" type="hidden" value="1">
+			<input class="auto-style9" name="currency_code" type="hidden" value="USD">
+			<input class="auto-style9" name="lc" type="hidden" value="US">
+			<input name="weight" type="hidden" value="8">
+			<input name="weight_unit" type="hidden" value="lbs">
+		</form>
+		</td>
+	</tr>
+	<tr>
+		<td class="auto-style8"><span class="auto-style9">(50THNAAGOLD) Very rare 
+		dealer award gold version </span><strong><span class="auto-style9">$1800
+		</span>
+		<a href="http://home.centurytel.net/dutzow/web/precisionseries/ford/NAA/naa.html" target="_blank">
+		<span class="auto-style9">See images</span></a></strong></td>
+		<td class="auto-style13">Call</td>
+	</tr>
+</tbody></table>
+<br>
+<br>
+</b>
+<table border="1" width="100%">
+	<tbody><tr>
+		<td width="100%"><font color="#CCCCCC" size="1">ABOUT - This particular 
+		web site is devoted exclusively to the Agco precision replica lines. The 
+		Precision Series lines are some of the most highly detailed replicas of 
+		farm machinery ever produced. Listed on the main page you will find a brief 
+		description of all the current Agco Precision Series releases. You will 
+		also find a few special editions and variations. Since these collectors 
+		items are not toys you will find the prices may vary greatly depending on 
+		several points. The age of the item, the rarity of the item, condition of 
+		the replica, the completeness of the replica and the condition of the box. 
+		Therefore, inventory may vary in price accordingly. Please keep in mind 
+		that the inventory may not necessarily be new. Many items I may purchase 
+		second hand because of the length of time that they have been discontinued. 
+		Each item is opened for inspection, its condition is carefully evaluated, 
+		it is returned to its original packing and notations are made along with 
+		each listing. I do my best to make a thorough inspection of each replica 
+		and box to provide an accurate description of each item. - Mike Schweissguth.</font></td>
+	</tr>
+	<tr>
+		<td height="18" width="100%"><font size="1"><b>ORDERING -</b> An item can 
+		be ordered in any one of 3 different ways. Order online by clicking the "Add 
+		To Cart" button and following the prompts. Our online Credit Card processing 
+		is handled by PayPal. If you do not have an account, the web site will automatically 
+		create one for you as you enter in your payment and shipping information. 
+		If you wish to phone in your order, please contact us at 636-221-2591 8:00 
+		to 5:00 central time, Monday - Friday. If you wish to mail your payment, 
+		please contact us first so that we may reserve your item. Payments are required 
+		within one week for reserved items.<br><br>Please understand that every 
+		effort is made to keep the website up-to-date. Although it would be a rare 
+		occasion, it is possible that an item added to your cart may already be 
+		sold. In the event that the item you purchased is already sold, I reserve 
+		the right to send one of equal or greater value, or refund the full purchase 
+		price with shipping. <br><br>We do not ship partial orders. If you place 
+		an order for a item not currently in stock, the entire order will be held 
+		until the order can be shipped complete.</font>&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100%"><font color="#CCCCCC" size="1"><b>SHIPPING - </b>All items 
+		are carefully packaged to insure safe arrival. Typically each item will 
+		be wrapped in plastic and then placed in an oversize box with a minimum 
+		of two inches of shredded paper to cushion and protect the replica. All 
+		items are shipped fully insured via FedEx unless another carrier is requested. 
+		Please provide us with an physical address that will have someone available 
+		to sign for the package.&nbsp;</font></td>
+	</tr>
+	<tr>
+		<td width="100%"><font color="#CCCCCC" size="1"><b>RETURNS - </b>Generally 
+		speaking returns are not accepted. The items we sell are accurately described 
+		to the best of our ability. If a unit has never been opened, the buyer takes 
+		full responsibility for the item at the time of purchase.
+		<a href="http://www.precisionclassic.com/">www.precisionclassic.com</a> will 
+		not be held responsible for manufacturing defects or shortages on unopened 
+		items. If the condition of an unopened item is a concern, we will open an 
+		unopened box to check its condition and completeness. This will only be 
+		done by request on a prepaid item. If you feel the item you received was 
+		not accurately described please contact us at 636-221-2591 for a resolution.&nbsp;&nbsp;</font></td>
+	</tr>
+</tbody></table>
+</div>
 
-  });
-  });
-  });
-  </script>
-<br /><br />
 
 
 
-</body>
-	 
-	 <footer>
-		
-ABOUT - This particular web site is devoted exclusively to the Agco precision replica lines. The Precision Series lines are some of the most highly detailed replicas of farm machinery ever produced. Listed on the main page you will find a brief description of all the current Agco Precision Series releases. You will also find a few special editions and variations. Since these collectors items are not toys you will find the prices may vary greatly depending on several points. The age of the item, the rarity of the item, condition of the replica, the completeness of the replica and the condition of the box. Therefore, inventory may vary in price accordingly. Please keep in mind that the inventory may not necessarily be new. Many items I may purchase second hand because of the length of time that they have been discontinued. Each item is opened for inspection, its condition is carefully evaluated, it is returned to its original packing and notations are made along with each listing. I do my best to make a thorough inspection of each replica and box to provide an accurate description of each item. - Mike Schweissguth.
-<br /><br />ORDERING - An item can be ordered in any one of 3 different ways. Order online by clicking the "Add To Cart" button and following the prompts. Our online Credit Card processing is handled by PayPal. If you do not have an account, the web site will automatically create one for you as you enter in your payment and shipping information. If you wish to phone in your order, please contact us at 636-221-2591 8:00 to 5:00 central time, Monday - Friday. If you wish to mail your payment, please contact us first so that we may reserve your item. Payments are required within one week for reserved items.
-<br />
-<br />Please understand that every effort is made to keep the website up-to-date. Although it would be a rare occasion, it is possible that an item added to your cart may already be sold. In the event that the item you purchased is already sold, I reserve the right to send one of equal or greater value, or refund the full purchase price with shipping. 
-<br />
-<br />We do not ship partial orders. If you place an order for a item not currently in stock, the entire order will be held until the order can be shipped complete. 
-<br /><br />SHIPPING - All items are carefully packaged to insure safe arrival. Typically each item will be wrapped in plastic and then placed in an oversize box with a minimum of two inches of shredded paper to cushion and protect the replica. All items are shipped fully insured via FedEx unless another carrier is requested. Please provide us with an physical address that will have someone available to sign for the package. 
-<br /><br />RETURNS - Generally speaking returns are not accepted. The items we sell are accurately described to the best of our ability. If a unit has never been opened, the buyer takes full responsibility for the item at the time of purchase. www.precisionclassic.com will not be held responsible for manufacturing defects or shortages on unopened items. If the condition of an unopened item is a concern, we will open an unopened box to check its condition and completeness. This will only be done by request on a prepaid item. If you feel the item you received was not accurately described please contact us at 636-221-2591 for a resolution.  
-	
-	 </footer>
-
-</html>
+</body></html>
