@@ -26,7 +26,7 @@
 	</style>
 	<title></title>
 </head>
-<body content="en-us">
+<body content="en-us" onload="executeLater()">
 	<br>
 	<a href="http://www.precisionclassic.com/"><img border="0" src="https://precisionclassic.github.io/pcbanner.jpg" width="100%"></a>
 	<p align="center">Click here for <a href="http://www.keepingitgreen.com/sbi/pc/ih.htm"><font color="#FF0000">Case IH,</font></a> <a href="http://www.keepingitgreen.com/sbi/pc/ac.htm"><font color="#FF9966">Agco</font></a> and <a href="http://www.keepingitgreen.com/sbi/pc/ford.htm"><font color="#0000FF">Ford</font></a> precisions.<br>
@@ -77,7 +77,7 @@
 	</script> <!-- individual listings below  -->
 	
 	<script type= text/javascript>
-$(window).load(
+function executeLater(){
 	 $(function()
 	{
 	var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1WA8kUKQImLMi-6aFWJcGyb6N9wwqmL5kZTJGjIPMLYo/2/public/full?alt=json';
@@ -158,8 +158,8 @@ if (y !== null) {
 
 	 });
 	 });
-	 }));
-   
+	 });
+   };
 	</script><br>
 	<br>
 	<footer>
