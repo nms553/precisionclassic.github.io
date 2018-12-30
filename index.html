@@ -1,7 +1,8 @@
-<html>
+<!DOCTYPE html>
 
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <style>
 body {
 	width: 975px;
@@ -11,6 +12,21 @@ body {
 table, td {
 	text-align: center;
 }
+
+.td1outer {
+	width:165px;
+}
+
+.td2outer {
+	width:185px;
+}
+
+.td3outer {
+	width:165px;
+}
+
+
+
 	
 g {
 	color: rgb(128, 128, 0);
@@ -76,11 +92,30 @@ $.getJSON(sheetUrlA, function(dataA)
   entryA.forEach(
   function(itemA, indexA) 
   {
-  var xx = document.getElementById("table");
-  xx.innerHTML += '<tr><td width="17%">' + itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />") + '</td><td style="background-color:white;" width="15%">' + '<a href="' + itemA.gsx$picturelink.$t + '"><img style="max-width:100%" src="' + itemA.gsx$thumbnaillink.$t + '"></a></td><td width="17%">' + itemA.gsx$description.$t.replace(/\n/g, "<br />") + '</td><td><table width="100%" border="1" id="' + itemA.gsx$itemnumber.$t + '"></table></td></tr>';
-
-
-
+  var trouter = document.createElement("TR");
+  var td1outer = document.createElement("TD");
+  var td2outer = document.createElement("TD");
+  var td3outer = document.createElement("TD");
+  var td4outer = document.createElement("TD");
+  var tableinner = document.createElement("TABLE");
+  
+  td1outer.innerHTML = itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />");
+  td2outer.innerHTML = '<a href="' + itemA.gsx$picturelink.$t + '"><img src="' + itemA.gsx$thumbnaillink.$t + '"></a>';
+  td3outer.innerHTML = itemA.gsx$description.$t.replace(/\n/g, "<br />");
+  td1outer.setAttribute("class", "td1outer");
+  td2outer.setAttribute("class", "td2outer");
+  td3outer.setAttribute("class", "td3outer");
+  tableinner.setAttribute("id", itemA.gsx$itemnumber.$t);
+  tableinner.setAttribute("border", "1");
+  tableinner.setAttribute("width", "100%");
+  
+  td4outer.appendChild(tableinner);
+  trouter.appendChild(td1outer);
+  trouter.appendChild(td2outer);
+  trouter.appendChild(td3outer);
+  trouter.appendChild(td4outer);
+  table.appendChild(trouter);
+      
   });
   });
   });
@@ -113,15 +148,15 @@ $.getJSON(sheetUrl, function(data)
     }
     else if (item.gsx$paypalprice.$t == "Call" || item.gsx$paypalprice.$t == "call" || item.gsx$paypalprice.$t == "Sold out" || item.gsx$paypalprice.$t == "sold out" || item.gsx$paypalprice.$t == "Sold Out" || item.gsx$paypalprice.$t == "On hold" || item.gsx$paypalprice.$t == "on hold" || item.gsx$paypalprice.$t == "On Hold") {
 	    
-     y.innerHTML += '<tr><td style="text-align:left;">' + item.gsx$desc.$t.replace(/\n/g, "<br />") + seemorelink + '</td><td width="100">' + item.gsx$paypalprice.$t + '</td></tr>';
+     y.innerHTML += '<tr><td>' + item.gsx$desc.$t.replace(/\n/g, "<br />") + seemorelink + '</td><td>' + item.gsx$paypalprice.$t + '</td></tr>';
 	    
 	    
     }
     else {
 
-    y.innerHTML += '<tr><td style="text-align:left;">' + item.gsx$desc.$t.replace(/\n/g, "<br />") 
+    y.innerHTML += '<tr><td>' + item.gsx$desc.$t.replace(/\n/g, "<br />") 
 + seemorelink
-+ '</td><td width="100">' 
++ '</td><td>' 
 + '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal" style="margin-bottom:0;">'
 + '<input alt="Make payments with PayPal - it is fast, free and secure!" border="0" name="I8" src="https://www.paypal.com/en_US/i/btn/x-click-but22.gif" type="image">'
 + '<input name="add" type="hidden" value="1">'
