@@ -111,12 +111,9 @@ $.getJSON(sheetUrl, function(data)
   function(item, index) 
   {
   var seemorelink = "";
-  if(item.gsx$seemorelink.$t !== "") {
-  seemorelink = '&nbsp;<a href="' + item.gsx$seemorelink.$t + '">See&nbsp;pictures</a>';
-  }
-  else {
-  seemorelink = "";
-  }
+  if(item.gsx$seemorelink.$t !== "") {seemorelink = '&nbsp;<a href="' + item.gsx$seemorelink.$t + '">See&nbsp;pictures</a>';}
+  else {seemorelink = "";}
+  
   var y = document.getElementById(item.gsx$matchingnumber.$t);
   if (y != null) {
   
@@ -152,7 +149,7 @@ td1inner.setAttribute("class", "td1inner");
 td2inner.setAttribute("class", "td2inner");
 trinner.appendChild(td1inner);
 trinner.appendChild(td2inner);
-document.getElementById(item.gsx$itemnumber.$t).appendChild(trinner);
+document.getElementById(item.gsx$matchingnumber.$t).appendChild(trinner);
     }
   
 
