@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<style>
+	body {width: 975px; margin: auto; background-color: #cc0033; color: white;}
+	table, td {text-align: center;}
+	.td1outer, .td3outer {width:165px;}
+	.td2outer {width:185px; background-color: white;}   
+	.td4outer {width:442px;}
+  .td1inner {text-align: left;}
+  .td2inner {width:100px;}
+	g {color: rgb(128, 128, 0); font-weight: bold;}
+	sp {color: rgb(0, 255, 0); font-weight: bold;}
+
+	footer {
+	   font-family: Arial, Helvetica, sans-serif;
+	   display: block;
+	   width: 80%;
+	   margin: auto;
+	   text-align: left;
+	   font-size: 0.75em;
+	}
+	</style>
+	<title></title>
+</head>
+<body content="en-us">
+	<br>
+	<a href="http://www.precisionclassic.com/"><img border="0" src="https://precisionclassic.github.io/pcbanner.jpg" width="100%"></a>
+	<p align="center">Click here for <a href="http://www.keepingitgreen.com/sbi/pc/ih.htm"><font color="#FF0000">Case IH,</font></a> <a href="http://www.keepingitgreen.com/sbi/pc/ac.htm"><font color="#FF9966">Agco</font></a> and <a href="http://www.keepingitgreen.com/sbi/pc/ford.htm"><font color="#0000FF">Ford</font></a> precisions.<br>
+	<br>
+	PrecisionClassic.com has partnered with CS Weathering to take the details of the Precision lines to the next level. Click each model listed for samples of CS Weathering finished products. <a href="http://www.keepingitgreen.com/sbi/pc/weathered/4450/4450.html" target="_blank">John Deere 4450</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/1570/1570.html" target="_blank">Case 1570</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/4840/4840.html" target="_blank">John Deere 4840</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/5488/5488.html" target="_blank">Case IH 5488</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/4440/4440.html" target="_blank">John Deere 4440</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/856/856.html" target="_blank">Farmall 856</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/560/560.html" target="_blank">Farmall 460</a> Please contact us for details.<br><br>
+<span id="p">
+
+</span></p>
+	<table border="1" id="table" width="100%"></table>
+	<script type= text/javascript>
+	$(function()
+	{
+	var sheetUrlA = 'https://spreadsheets.google.com/feeds/list/1WA8kUKQImLMi-6aFWJcGyb6N9wwqmL5kZTJGjIPMLYo/3/public/full?alt=json';
+	$.getJSON(sheetUrlA, function(dataA)
+	{
+	 var entryA = dataA.feed.entry;
+	 console.log(entryA);
+	 
+	 entryA.forEach(
+	 function(itemA, indexA) 
+	 {
+   if (itemA.gsx$itemnumber.$t == "section!") {
+   var troutersection = document.createElement("TR");
+   var td1outersection = document.createElement("TD");
+   td1outersection.innerHTML = itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />");
+   td1outersection.setAttribute("colspan", "4");
+	 troutersection.appendChild(td1outersection);
+   table.appendChild(troutersection);
+   
+   }
+   
+   else if (itemA.gsx$itemnumber.$t == "message!") {
+   document.getElementById("p");
+   p.innerHTML += '<i>' + itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />") + '</i>';
+   }
+   
+   else {
+	 var trouter = document.createElement("TR");
+	 var td1outer = document.createElement("TD");
+	 var td2outer = document.createElement("TD");
+	 var td3outer = document.createElement("TD");
+	 var td4outer = document.createElement("TD");
+	 var tableinner = document.createElement("TABLE");
+	 
+	 var picturelink = "";
+	 if (itemA.gsx$picturelink.$t !== "") {picturelink = '<a href="' + itemA.gsx$picturelink.$t + '"><img src="' + itemA.gsx$thumbnaillink.$t + '"><\/a>';}
+	else {picturelink = '<img src="' + itemA.gsx$thumbnaillink.$t + '">';}
+		
+	 td1outer.innerHTML = itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />");
+	 td2outer.innerHTML = picturelink;
+	 td3outer.innerHTML = itemA.gsx$description.$t.replace(/\n/g, "<br />");
+	 td1outer.setAttribute("class", "td1outer");
+	 td2outer.setAttribute("class", "td2outer");
+	 td3outer.setAttribute("class", "td3outer");
+	 td4outer.setAttribute("class", "td4outer");
+	 tableinner.setAttribute("id", itemA.gsx$itemnumber.$t);
+	 tableinner.setAttribute("border", "1");
+	 tableinner.setAttribute("width", "100%");
+	 
+	 td4outer.appendChild(tableinner);
+	 trouter.appendChild(td1outer);
+	 trouter.appendChild(td2outer);
+	 trouter.appendChild(td3outer);
+	 trouter.appendChild(td4outer);
+	 table.appendChild(trouter);
+	     
+	 }
+   });
+	 });
+	 });
+	</script> <!-- individual listings below  -->
+	
+	<script type= text/javascript>
+setTimeout(function(){ 
+	 $(function()
+	{
+	var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1WA8kUKQImLMi-6aFWJcGyb6N9wwqmL5kZTJGjIPMLYo/4/public/full?alt=json';
+	$.getJSON(sheetUrl, function(data)
+	{
+	 var entry = data.feed.entry;
+	 console.log(entry);
+	 
+	 entry.forEach(
+	 function(item, index) 
+	 {
+	 var seemorelink = "";
+	 
+   if(item.gsx$seemorelink.$t !== "") {
+   seemorelink = '&nbsp;<a href="' + item.gsx$seemorelink.$t + '">See&nbsp;pictures<\/a>';
+   }
+	 
+   else {
+   seemorelink = "";
+   }
+	 
+var y = document.getElementById(item.gsx$matchingnumber.$t);
+
+if (y !== null) {
+	  if (item.gsx$paypalprice.$t == "" || item.gsx$paypalprice.$t == "SO" || item.gsx$paypalprice.$t == "blank") {
+  	var trinnerblank = document.createElement("TR");
+		var td1innerblank = document.createElement("TD");
+    td1innerblank.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />");
+		trinnerblank.appendChild(td1innerblank);
+		y.setAttribute("border", "0");
+		document.getElementById(item.gsx$matchingnumber.$t).appendChild(trinnerblank);
+	   }
+     
+	   else if (item.gsx$paypalprice.$t == "Call" || item.gsx$paypalprice.$t == "call" || item.gsx$paypalprice.$t == "Sold out" || item.gsx$paypalprice.$t == "sold out" || item.gsx$paypalprice.$t == "Sold Out" || item.gsx$paypalprice.$t == "On hold" || item.gsx$paypalprice.$t == "on hold" || item.gsx$paypalprice.$t == "On Hold") {
+     
+  var trinnercallorSO = document.createElement("TR");
+	var td1innercallorSO = document.createElement("TD");
+	var td2innercallorSO = document.createElement("TD");
+	td1innercallorSO.innerHTML += item.gsx$desc.$t.replace(/\n/g, "<br />") + seemorelink;
+	td2innercallorSO.innerHTML += item.gsx$paypalprice.$t
+
+	td1innercallorSO.setAttribute("class", "td1inner");
+	td2innercallorSO.setAttribute("class", "td2inner");
+	trinnercallorSO.appendChild(td1innercallorSO);
+	trinnercallorSO.appendChild(td2innercallorSO);
+	document.getElementById(item.gsx$matchingnumber.$t).appendChild(trinnercallorSO);
+	       
+	       
+	   }
+	   else {
+	var trinner = document.createElement("TR");
+	var td1inner = document.createElement("TD");
+	var td2inner = document.createElement("TD");
+	td1inner.innerHTML += item.gsx$desc.$t.replace(/\n/g, "<br />") + seemorelink;
+	td2inner.innerHTML += '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal" style="margin-bottom:0;">'
+	+ '<input alt="Make payments with PayPal - it is fast, free and secure!" border="0" name="I8" src="https://www.paypal.com/en_US/i/btn/x-click-but22.gif" type="image">'
+	+ '<input name="add" type="hidden" value="1">'
+	+ '<input name="cmd" type="hidden" value="_cart">'
+	+ '<input name="business" type="hidden" value="precisionclassic@schweissguth.com">'
+	+ '<input name="item_name" type="hidden" value="' + item.gsx$paypaldesc.$t + '">'
+	+ '<input name="item_number" type="hidden" value="' + item.gsx$paypalitem.$t + '">'
+	+ '<input name="amount" type="hidden" value="' + item.gsx$paypalprice.$t + '">'
+	+ '<input name="no_note" type="hidden" value="1">'
+	+ '<input name="currency_code" type="hidden" value="USD">'
+	+ '<input name="lc" type="hidden" value="US">'
+	+ '<input name="weight" type="hidden" value="' + item.gsx$weight.$t + '">'
+	+ '<input name="weight_unit" type="hidden" value="lbs">' + '<\/form>';
+
+	td1inner.setAttribute("class", "td1inner");
+	td2inner.setAttribute("class", "td2inner");
+	trinner.appendChild(td1inner);
+	trinner.appendChild(td2inner);
+	document.getElementById(item.gsx$matchingnumber.$t).appendChild(trinner);
+	   }
+	 
+
+
+	}
+
+	 });
+	 });
+	 });
+   }, 3000);
+	</script><br>
+	<br>
+	<footer>
+		<br>
+		<b>ABOUT</b> - This particular web site is devoted primarily to the John Deere precision replica lines. The Precision Classic lines are some of the most highly detailed replicas of farm machinery ever produced. Listed on the main page you will find a brief description of all the John Deere Precision Classic releases. In the original Precision Classic line there are 25 numbered models in the 14 year production run which started in 1990. You will also find a few special editions and variations. Throughout the years Ertl has also issued some other precisions that were not necessarily part of the original product line. These additional lines include a smaller 1/32 scale line referred to as the Series II Precision Classic line, A Precision Classic Construction line of equipment, a series of Precision Classic Lawn and Garden tractors and equipment, and a new line of precisions introduced in late 2004 marketed as the Precision Key series and finally in 2011 the Precision Elite Series. On the home page each edition will list available inventory and retail pricing. Since these collectors items are not toys you will find the prices may vary greatly depending on several points. The age of the item, the rarity of the item, condition of the replica, the completeness of the replica and the condition of the box. Therefore, inventory may vary in price accordingly. Please keep in mind that the inventory may not necessarily be new. Many items I may purchase second hand because of the length of time that they have been discontinued. Each item is opened for inspection (unless the package is factory sealed), its condition is carefully evaluated, it is returned to its original packing and notations are made along with each listing.<br>
+		<br>
+		<b>ORDERING</b> - An item can be ordered in any one of 3 different ways. Order online by clicking the "Add To Cart" button and following the prompts. Our online Credit Card processing is handled by PayPal. If you do not have an account, the web site will automatically create one for you as you enter in your payment and shipping information. If you wish to phone in your order, please contact us at 636-221-2591 8:00 to 5:00 central time, Monday - Friday. If you wish to mail your payment, please contact us first so that we may reserve your item. Payments are required within one week for reserved items.<br>
+		<br>
+		Please understand that every effort is made to keep the website up-to-date. Although it would be a rare occasion, it is possible that an item added to your cart may already be sold. In the event that the item you purchased is already sold, I reserve the right to send one of equal or greater value, or refund the full purchase price with shipping.<br>
+		<br>
+		We do not ship partial orders. If you place an order for a item not currently in stock, the entire order will be held until the order can be shipped complete.<br>
+		<br>
+		<b>RETURNS</b> - Generally speaking returns are not accepted. The items we sell are accurately described to the best of our ability. If a unit has never been opened, the buyer takes full responsibility for the item at the time of purchase. www.precisionclassic.com will not be held responsible for manufacturing defects or shortages on unopened items. If the condition of an unopened item is a concern, we will open an unopened box to check its condition and completeness. This will only be done by request on a prepaid item. If you feel the item you received was not accurately described please contact us at 636-221-2591 for a resolution.<br>
+		<br>
+		<b>SHIPPING</b> - All items are carefully packaged to insure safe arrival. Typically each item will be wrapped in plastic and then placed in an oversize box with a minimum of two inches of shredded paper to cushion and protect the replica. All items are shipped fully insured via FedEx unless another carrier is requested. Please provide us with an physical address that will have someone available to sign for the package.<br>
+		<br>
+		<b>INTERNATIONAL ORDERS</b> - The web site is not capable of calculating shipping outside the main 48 US States. We encourage our customers outside the 48 states to contact us for a shipping quote.<br>
+		<br>
+		<b>BUY,SELL,TRADE</b> - Have a collection to sell? Have extras to barter with? Please contact us at 636-221-2591
+	</footer><br>
+	<h1 align="center">1-636-221-2591</h1>
+	<h2 align="center">precisionclassic@schweissguth.com</h2>
+</body>
+</html>
