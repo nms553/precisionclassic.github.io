@@ -71,8 +71,12 @@
 	 var td4outer = document.createElement("TD");
 	 var tableinner = document.createElement("TABLE");
 	 
+	 var picturelink = "";
+	 if (itemA.gsx$picturelink.$t !== "") {picturelink = '<a href="' + itemA.gsx$picturelink.$t + '"><img src="' + itemA.gsx$thumbnaillink.$t + '"><\/a>';}
+	else {picturelink = '<img src="' + itemA.gsx$thumbnaillink.$t + '">';}
+		
 	 td1outer.innerHTML = itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />");
-	 td2outer.innerHTML = '<a href="' + itemA.gsx$picturelink.$t + '"><img src="' + itemA.gsx$thumbnaillink.$t + '"><\/a>';
+	 td2outer.innerHTML = picturelink;
 	 td3outer.innerHTML = itemA.gsx$description.$t.replace(/\n/g, "<br />");
 	 td1outer.setAttribute("class", "td1outer");
 	 td2outer.setAttribute("class", "td2outer");
