@@ -67,17 +67,17 @@ Farmall 460 </a>Please contact us for details.</p>
 <script>
 $(function()
 {
-var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1WA8kUKQImLMi-6aFWJcGyb6N9wwqmL5kZTJGjIPMLYo/1/public/full?alt=json';
-$.getJSON(sheetUrl, function(data)
+var sheetUrlA = 'https://spreadsheets.google.com/feeds/list/1WA8kUKQImLMi-6aFWJcGyb6N9wwqmL5kZTJGjIPMLYo/1/public/full?alt=json';
+$.getJSON(sheetUrlA, function(dataA)
 {
-  var entry = data.feed.entry;
-  console.log(entry);
+  var entryA = dataA.feed.entry;
+  console.log(entryA);
   
-  entry.forEach(
-  function(item, index) 
+  entryA.forEach(
+  function(itemA, indexA) 
   {
-  var x = document.getElementById("table");
-  x.innerHTML += '<tr><td width="17%">' + item.gsx$modelinfo.$t.replace(/\n/g, "<br />") + '</td><td style="background-color:white;" width="15%">' + '<a href="' + item.gsx$picturelink.$t + '"><img style="max-width:100%" src="' + item.gsx$thumbnaillink.$t + '"></a></td><td width="17%">' + item.gsx$description.$t.replace(/\n/g, "<br />") + '</td><td><table width="100%" border="1" id="' + item.gsx$itemnumber.$t + '"></table></td></tr>';
+  var xx = document.getElementById("table");
+  xx.innerHTML += '<tr><td width="17%">' + itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />") + '</td><td style="background-color:white;" width="15%">' + '<a href="' + itemA.gsx$picturelink.$t + '"><img style="max-width:100%" src="' + itemA.gsx$thumbnaillink.$t + '"></a></td><td width="17%">' + itemA.gsx$description.$t.replace(/\n/g, "<br />") + '</td><td><table width="100%" border="1" id="' + itemA.gsx$itemnumber.$t + '"></table></td></tr>';
 
 
 
