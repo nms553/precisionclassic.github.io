@@ -117,7 +117,7 @@ $.getJSON(sheetUrl, function(data)
   else {
   seemorelink = "";
   }
-  var y = document.getElementById(item.gsx$itemnumber.$t);
+  var y = document.getElementById(item.gsx$matchingnumber.$t);
   if (y != null) {
   
   	if (item.gsx$paypalprice.$t == "" || item.gsx$paypalprice.$t == "SO" || item.gsx$paypalprice.$t == "blank") {
@@ -130,31 +130,29 @@ $.getJSON(sheetUrl, function(data)
 	    
     }
     else {
-
-    y.innerHTML += '<tr><td>' + item.gsx$desc.$t.replace(/\n/g, "<br />") 
-+ seemorelink
-+ '</td><td>' 
-+ '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal" style="margin-bottom:0;">'
+var trinner = document.createElement("TR");
+var td1inner = document.createElement("TD");
+var td2inner = document.createElement("TD");
+td1inner.innerHTML += item.gsx$desc.$t.replace(/\n/g, "<br />") + seemorelink;
+td2inner.innerHTML += '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal" style="margin-bottom:0;">'
 + '<input alt="Make payments with PayPal - it is fast, free and secure!" border="0" name="I8" src="https://www.paypal.com/en_US/i/btn/x-click-but22.gif" type="image">'
 + '<input name="add" type="hidden" value="1">'
 + '<input name="cmd" type="hidden" value="_cart">'
 + '<input name="business" type="hidden" value="precisionclassic@schweissguth.com">'
-+ '<input name="item_name" type="hidden" value="'
-+ item.gsx$paypaldesc.$t + '">'
-+ '<input name="item_number" type="hidden" value="'
-+ item.gsx$paypalitem.$t + '">'
-+ '<input name="amount" type="hidden" value="'
-+ item.gsx$paypalprice.$t + '">'
++ '<input name="item_name" type="hidden" value="' + item.gsx$paypaldesc.$t + '">'
++ '<input name="item_number" type="hidden" value="' + item.gsx$paypalitem.$t + '">'
++ '<input name="amount" type="hidden" value="' + item.gsx$paypalprice.$t + '">'
 + '<input name="no_note" type="hidden" value="1">'
 + '<input name="currency_code" type="hidden" value="USD">'
 + '<input name="lc" type="hidden" value="US">'
-+ '<input name="weight" type="hidden" value="'
-+ "10" + '">'
-+ '<input name="weight_unit" type="hidden" value="lbs">'
-+ '</form>';
-    + '</td></tr>';
-    
-    
++ '<input name="weight" type="hidden" value="' + item.gsx$weight.$t + '">'
++ '<input name="weight_unit" type="hidden" value="lbs">' + '</form>';
+
+td1inner.setAttribute("class", "td1inner");
+td2inner.setAttribute("class", "td2inner");
+trinner.appendChild(td1inner);
+trinner.appendChild(td2inner);
+document.getElementById(item.gsx$itemnumber.$t).appendChild(trinner);
     }
   
 
