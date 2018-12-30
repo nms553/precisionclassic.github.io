@@ -107,6 +107,7 @@ if (y !== null) {
 		var td1innerblank = document.createElement("TD");
     td1innerblank.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />");
 		trinnerblank.appendChild(td1innerblank);
+		y.setAttribute("border", "1");
 		document.getElementById(item.gsx$matchingnumber.$t).appendChild(trinnerblank);
 	   }
      
