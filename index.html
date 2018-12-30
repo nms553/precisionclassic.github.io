@@ -31,8 +31,10 @@
 	<a href="http://www.precisionclassic.com/"><img border="0" src="https://precisionclassic.github.io/pcbanner.jpg" width="100%"></a>
 	<p align="center">Click here for <a href="http://www.keepingitgreen.com/sbi/pc/ih.htm"><font color="#FF0000">Case IH,</font></a> <a href="http://www.keepingitgreen.com/sbi/pc/ac.htm"><font color="#FF9966">Agco</font></a> and <a href="http://www.keepingitgreen.com/sbi/pc/ford.htm"><font color="#0000FF">Ford</font></a> precisions.<br>
 	<br>
-	PrecisionClassic.com has partnered with CS Weathering to take the details of the Precision lines to the next level. Click each model listed for samples of CS Weathering finished products. <a href="http://www.keepingitgreen.com/sbi/pc/weathered/4450/4450.html" target="_blank">John Deere 4450</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/1570/1570.html" target="_blank">Case 1570</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/4840/4840.html" target="_blank">John Deere 4840</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/5488/5488.html" target="_blank">Case IH 5488</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/4440/4440.html" target="_blank">John Deere 4440</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/856/856.html" target="_blank">Farmall 856</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/560/560.html" target="_blank">Farmall 460</a> Please contact us for details.</p><br>
+	PrecisionClassic.com has partnered with CS Weathering to take the details of the Precision lines to the next level. Click each model listed for samples of CS Weathering finished products. <a href="http://www.keepingitgreen.com/sbi/pc/weathered/4450/4450.html" target="_blank">John Deere 4450</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/1570/1570.html" target="_blank">Case 1570</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/4840/4840.html" target="_blank">John Deere 4840</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/5488/5488.html" target="_blank">Case IH 5488</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/4440/4440.html" target="_blank">John Deere 4440</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/856/856.html" target="_blank">Farmall 856</a> - <a href="http://www.keepingitgreen.com/sbi/pc/weathered/560/560.html" target="_blank">Farmall 460</a> Please contact us for details.<br><br>
+<span id="p">
 
+</span></p>
 	<table border="1" id="table" width="100%"></table>
 	<script type= text/javascript>
 	$(function()
@@ -46,7 +48,7 @@
 	 entryA.forEach(
 	 function(itemA, indexA) 
 	 {
-   if (itemA.gsx$itemnumber.$t == "section") {
+   if (itemA.gsx$itemnumber.$t == "section!") {
    var troutersection = document.createElement("TR");
    var td1outersection = document.createElement("TD");
    td1outersection.innerHTML = itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />");
@@ -54,6 +56,11 @@
 	 troutersection.appendChild(td1outersection);
    table.appendChild(troutersection);
    
+   }
+   
+   else if (itemA.gsx$itemnumber.$t == "message!") {
+   document.getElementById("p");
+   p.innerHTML += '<i>' + itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />") + '</i>';
    }
    
    else {
