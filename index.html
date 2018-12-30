@@ -19,10 +19,13 @@ table, td {
 
 .td2outer {
 	width:185px;
-	
-	
+	background-color: white;
 }
-
+	
+.td4outer {
+	width:442px;
+	background-color: white;
+}
 
 
 
@@ -104,6 +107,7 @@ $.getJSON(sheetUrlA, function(dataA)
   td1outer.setAttribute("class", "td1outer");
   td2outer.setAttribute("class", "td2outer");
   td3outer.setAttribute("class", "td3outer");
+  td4outer.setAttribute("class", "td4outer");
   tableinner.setAttribute("id", itemA.gsx$itemnumber.$t);
   tableinner.setAttribute("border", "1");
   tableinner.setAttribute("width", "100%");
