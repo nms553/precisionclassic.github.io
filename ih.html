@@ -8,7 +8,7 @@
 	body {width: 975px; margin: auto; background-color: #cc0033; color: white;}
 	table, td {text-align: center;}
 	.td1outer, .td3outer {width:150px;}
-	.td2outer {width:185px; background-color: white;}   
+	.td2outer {width:185px; max-width: 185px; background-color: white;}   
 	
   .td1inner {text-align: left;}
   .td2inner {width:100px;}
@@ -23,6 +23,7 @@
 	   text-align: left;
 	   font-size: 0.75em;
 	}
+	img {display: block; max-width: 100%;}
 	</style>
 	<title></title>
 </head>
@@ -75,8 +76,8 @@
 	 var tableinner = document.createElement("TABLE");
 	 
 	 var picturelink = "";
-	 if (itemA.gsx$picturelink.$t !== "") {picturelink = '<a href="' + itemA.gsx$picturelink.$t + '" target="_blank"><img style="max-width: 100%; display: block;" src="' + itemA.gsx$thumbnaillink.$t + '"><\/a>';}
-	else {picturelink = '<img style="max-width: 100%; display: block;" src="' + itemA.gsx$thumbnaillink.$t + '">';}
+	 if (itemA.gsx$picturelink.$t !== "") {picturelink = '<a href="' + itemA.gsx$picturelink.$t + '" target="_blank"><img src="' + itemA.gsx$thumbnaillink.$t + '"><\/a>';}
+	else {picturelink = '<img src="' + itemA.gsx$thumbnaillink.$t + '">';}
 		
 	 td1outer.innerHTML = itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />");
 	 td2outer.innerHTML = picturelink;
