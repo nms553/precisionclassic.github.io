@@ -9,7 +9,7 @@
 	table, td {text-align: center;}
 	.td1outer, .td3outer {width:165px;}
 	.td2outer {width:185px; background-color: white;}   
-	.td4outer {width:442px;}
+
   .td1inner {text-align: left;}
   .td2inner {width:100px;}
 	g {color: rgb(128, 128, 0); font-weight: bold;}
@@ -72,8 +72,8 @@
 	 var tableinner = document.createElement("TABLE");
 	 
 	 var picturelink = "";
-	 if (itemA.gsx$picturelink.$t !== "") {picturelink = '<a href="' + itemA.gsx$picturelink.$t + '"><img src="' + itemA.gsx$thumbnaillink.$t + '"><\/a>';}
-	else {picturelink = '<img src="' + itemA.gsx$thumbnaillink.$t + '">';}
+	 if (itemA.gsx$picturelink.$t !== "") {picturelink = '<a href="' + itemA.gsx$picturelink.$t + '"><img style="max-width: 100%" src="' + itemA.gsx$thumbnaillink.$t + '"><\/a>';}
+	else {picturelink = '<img style="max-width: 100%" src="' + itemA.gsx$thumbnaillink.$t + '">';}
 		
 	 td1outer.innerHTML = itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />");
 	 td2outer.innerHTML = picturelink;
