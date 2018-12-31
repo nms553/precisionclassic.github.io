@@ -100,8 +100,8 @@
 	</script> <!-- individual listings below  -->
 	
 	<script type= text/javascript>
-
-$(document).ready(function()
+setTimeout(function(){ 
+$(function()
 	{
 	var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1WA8kUKQImLMi-6aFWJcGyb6N9wwqmL5kZTJGjIPMLYo/2/public/full?alt=json';
 	$.getJSON(sheetUrl, function(data)
@@ -183,7 +183,7 @@ if (y !== null) {
 	 });
 	 });
 	 });
-   
+   }, 1000);
 	</script><br>
 	<br>
 	<footer>
