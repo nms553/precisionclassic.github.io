@@ -75,7 +75,7 @@
 	 var tableinner = document.createElement("TABLE");
 	 
 	 var picturelink = "";
-	 if (itemA.gsx$picturelink.$t !== "") {picturelink = '<a href="' + itemA.gsx$picturelink.$t + '"><img src="' + itemA.gsx$thumbnaillink.$t + '"><\/a>';}
+	 if (itemA.gsx$picturelink.$t !== "") {picturelink = '<a href="' + itemA.gsx$picturelink.$t + '"><img style="max-width: 100%" src="' + itemA.gsx$thumbnaillink.$t + '"><\/a>';}
 	else {picturelink = '<img src="' + itemA.gsx$thumbnaillink.$t + '">';}
 		
 	 td1outer.innerHTML = itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />");
