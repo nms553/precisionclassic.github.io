@@ -14,7 +14,7 @@
   .td2inner {width:100px;}
 	g {color: rgb(128, 128, 0); font-weight: bold;}
 	sp {color: rgb(0, 255, 0); font-weight: bold;}
-
+	form {margin-bottom: 0;}
 	footer {
 	   font-family: Arial, Helvetica, sans-serif;
 	   display: block;
@@ -75,8 +75,8 @@
 	 var tableinner = document.createElement("TABLE");
 	 
 	 var picturelink = "";
-	 if (itemA.gsx$picturelink.$t !== "") {picturelink = '<a href="' + itemA.gsx$picturelink.$t + '" target="_blank"><img style="max-width: 100%" src="' + itemA.gsx$thumbnaillink.$t + '"><\/a>';}
-	else {picturelink = '<img style="max-width: 100%" src="' + itemA.gsx$thumbnaillink.$t + '">';}
+	 if (itemA.gsx$picturelink.$t !== "") {picturelink = '<a href="' + itemA.gsx$picturelink.$t + '" target="_blank"><img src="' + itemA.gsx$thumbnaillink.$t + '"><\/a>';}
+	else {picturelink = '<img src="' + itemA.gsx$thumbnaillink.$t + '">';}
 		
 	 td1outer.innerHTML = itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />");
 	 td2outer.innerHTML = picturelink;
@@ -158,7 +158,7 @@ if (y !== null) {
 	var td1inner = document.createElement("TD");
 	var td2inner = document.createElement("TD");
 	td1inner.innerHTML += item.gsx$desc.$t.replace(/\n/g, "<br />") + seemorelink;
-	td2inner.innerHTML += '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal" style="margin-bottom:0;">'
+	td2inner.innerHTML += '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">'
 	+ '<input alt="Make payments with PayPal - it is fast, free and secure!" border="0" name="I8" src="https://www.paypal.com/en_US/i/btn/x-click-but22.gif" type="image">'
 	+ '<input name="add" type="hidden" value="1">'
 	+ '<input name="cmd" type="hidden" value="_cart">'

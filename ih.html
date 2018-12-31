@@ -25,7 +25,7 @@
 	   font-size: 0.75em;
 	}
 	img {display: block; max-width: 100%; margin: auto;}
-	
+	form {margin-bottom: 0;}
 	</style>
 	<title></title>
 </head>
@@ -161,7 +161,7 @@ if (y !== null) {
 	var td1inner = document.createElement("TD");
 	var td2inner = document.createElement("TD");
 	td1inner.innerHTML += item.gsx$desc.$t.replace(/\n/g, "<br />") + seemorelink;
-	td2inner.innerHTML += '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal" style="margin-bottom:0;">'
+	td2inner.innerHTML += '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">'
 	+ '<input alt="Make payments with PayPal - it is fast, free and secure!" border="0" name="I8" src="https://www.paypal.com/en_US/i/btn/x-click-but22.gif" type="image">'
 	+ '<input name="add" type="hidden" value="1">'
 	+ '<input name="cmd" type="hidden" value="_cart">'
