@@ -20,26 +20,54 @@
         background-color: #6F6;
       }
 
-      table.maintable {
+      .maintable {
         table-layout: fixed;
         width: 100%;
         text-align: center;
         word-break: break-word;
-
+        /* border: thin black solid;
+        border-collapse:collapse;*/
+        height: 100%;
+        border-spacing: 0px 20px;
       }
+
+      .maintable td {
+        /*border: thin black solid;*/
+        padding: 10px;
+      }
+
+      .maintable>tbody>tr {
+        background-color: white;
+      }
+
 
       table.maintable>tbody>tr>td:first-child {
         width: 17% !important;
+        border-left: thin black solid;
+        border-bottom: thin black solid;
+        border-top: thin black solid;
       }
 
       table.maintable>tbody>tr>td:nth-child(2) {
         width: 21% !important;
         background-color: white;
+        border-bottom: thin black solid;
+        border-top: thin black solid;
       }
 
       table.maintable>tbody>tr>td:nth-child(3) {
         width: 19% !important;
+        border-right: thin black dashed;
+        border-bottom: thin black solid;
+        border-top: thin black solid;
       }
+
+      table.maintable>tbody>tr>td:nth-child(4) {
+        border-right: thin black solid;
+        border-bottom: thin black solid;
+        border-top: thin black solid;
+      }
+
 
       go {
         color: rgb(128, 128, 0);
@@ -50,25 +78,61 @@
         color: rgb(255, 0, 0);
         font-weight: bold;
       }
-      
-      footer {font-size: 0.75em;}
+
+      footer {
+        font-size: 0.7em;
+        text-align: justify;
+
+      }
+
+
+
+      .listing {
+        border-collapse: collapse;
+        border-style: hidden;
+        height: 100%;
+        width: 100%;
+      }
+
+      .cell1 {
+
+        width: 100px;
+      }
+
+      .cell0 {
+
+        text-align: left;
+      }
+
+      .listing td {
+        border: thin black dashed;
+
+      }
 
     </style>
+    <br>
   </head>
 
   <body>
+    <img style="max-width: 100%;" src="./pcbanner.jpg">
 
-    <br>
-    <img width="100%" src="./pcbanner.jpg">
-    <br><br>
-
-    Click here for
-    <a href="./ih.htm"><font color="#FF0000">Case IH</font></a>&nbsp;
-    <a href="./ac.htm"><font color="#FF9966">Agco</font></a>&nbsp;and
-    <a href="./ford.htm"><font color="#0000FF">Ford</font></a> precisions.
+    <br>Click here for
+    <a href="./ih.htm">
+      <font color="#FF0000">Case IH</font>
+    </a>&nbsp;
+    <a href="./ac.htm">
+      <font color="#FF9966">Agco</font>
+    </a>&nbsp;and
+    <a href="./ford.htm">
+      <font color="#0000FF">Ford</font>
+    </a> precisions.
     <em>Last updated Jul 5 2019</em>
 
-    <br><br>
+    <br>
+    <br />
+
+    <br>
+
     PrecisionClassic.com has partnered with CS Weathering to take the details of the Precision lines to the next level. Click each model listed for samples of CS Weathering finished products.
     <a href="http://www.keepingitgreen.com/sbi/pc/weathered/4450/4450.html" target="_blank">John Deere 4450</a> -
     <a href="http://www.keepingitgreen.com/sbi/pc/weathered/1570/1570.html" target="_blank">Case 1570</a> -
@@ -82,10 +146,10 @@
     <strong>Coming Fall of 2019. The first release of the new line of John Deere Precisions, a John Deere 620 w/ plow. More details coming soon!!!</strong>
     <br /><br>
 
-    <table id="maintable" align="center" border="1" width="100%" class="maintable">
+    <table id="maintable" class="maintable">
       <tr>
-        <td style="width: 204px">100 year tractor anniversary<br>Only 2018 
-		produced <br><br>#LP68805 <br>2018 <br>1/16 scale <br></td>
+        <td style="width: 204px">100 year tractor anniversary<br>Only 2018
+          produced <br><br>#LP68805 <br>2018 <br>1/16 scale <br></td>
         <td style="width: 243px">
           <a href="./deere/wblarge.JPG">
             <img src="./deere/wb.jpg"></a></td>
@@ -97,8 +161,8 @@
         <td style="width: 204px">#5<br>Precision Elite<br><br>#64435<br>2017<br>
           1/16 scale</td>
         <td style="width: 243px">
-          <a href="./deere/4320/4320.html">
-            <img class="auto-style2" src="./deere/4320.jpg"></a></td>
+          <a href="deere/4320.html">
+            <img class="auto-style1" src="./deere/4320.jpg"></a></td>
         <td style="width: 243px">John Deere 4320<br><br>Fifth release in the Precision
           Elite Series</td>
         <td id="64435"></td>
@@ -107,8 +171,8 @@
         <td style="width: 204px">Special Edition<br>25th Precision Anniversary<br>
           Only 1000 made!!<br><br>2016<br>1/16 scale</td>
         <td style="width: 243px">
-          <a href="./deere/7800/7800.html">
-            <img src="./deere/7800gold.jpg"></a></td>
+          <a href="deere/7800Gold.html">
+            <img src="./deere/7800gold.jpg" class="auto-style1"></a></td>
         <td style="width: 243px">John Deere 7800 MFWD<br><br>Gold Chrome plated<br>
           Special Edition celebrating the 25th anniversary of the Ertl Precision line</td>
         <td id="45507N"></td>
@@ -117,8 +181,8 @@
         <td style="width: 204px">#4<br>Precision Elite<br><br>#45507<br>2015<br>
           1/16 scale</td>
         <td style="width: 243px">
-          <a href="http://www.keepingitgreen.com/sbi/pc/deere/7800/7800.html" target="_blank">
-            <img src="./deere/7800.jpg"></a></td>
+          <a href="deere/7800.html" target="_blank">
+            <img src="./deere/7800.jpg" class="auto-style1"></a></td>
         <td style="width: 243px">John Deere 7800 MFWD<br><br>
           <font color="#000000">Fourth release in the Precision Elite Series</font>
         </td>
@@ -128,8 +192,8 @@
         <td style="width: 204px">#3<br>Precision Elite <br><br>#45464<br>2014<br>
           1/16 scale</td>
         <td style="width: 243px">
-          <a href="./deere/4840/4840.html" target="_blank">
-            <img src="./deere/4840.jpg"></a></td>
+          <a href="deere/4840.html" target="_blank">
+            <img src="./deere/4840.jpg" class="auto-style1"></a></td>
         <td style="width: 243px">John Deere Model 4840<br><br>
           <font color="#000000">Third release in the Precision Elite Series</font>
         </td>
@@ -139,8 +203,8 @@
         <td style="width: 204px">#2<br>Precision Elite<br><br>#45358<br>2013<br>
           <br>1/16 scale</td>
         <td style="width: 243px">
-          <a href="http://www.keepingitgreen.com/sbi/pc/deere/6030/6030.html" target="_blank">
-            <img src="./deere/6030.jpg"></a></td>
+          <a href="deere/6030.html" target="_blank">
+            <img src="./deere/6030.jpg" class="auto-style1"></a></td>
         <td style="width: 243px">John Deere Model 6030<br><br>Second<font color="#000000">
             release in the Precision Elite Series</font>
         </td>
@@ -150,8 +214,8 @@
         <td style="width: 204px">#1<br>Precision Elite<br><br>#45289<br>2011<br>
           <br>1/16 scale</td>
         <td style="width: 243px">
-          <a href="http://www.keepingitgreen.com/sbi/pc/deere/4450/4450.html" target="_blank">
-            <img src="./deere/4450.JPG"></a></td>
+          <a href="deere/4450.html" target="_blank">
+            <img src="./deere/4450.JPG" class="auto-style1"></a></td>
         <td style="width: 243px"><br>John Deere Model 4450<br><br>
           <font color="#000000">First release in the Precision Elite Series</font><br>
         </td>
@@ -161,8 +225,8 @@
         <td style="width: 204px">#10<br>Precision Key<br><br>#45238<br>2010<br>
           <br>1/16 scale</td>
         <td style="width: 243px">
-          <a href="http://www.keepingitgreen.com/sbi/pc/deere/4960/4960.html" target="_blank">
-            <img src="./deere/4960.jpg"></a></td>
+          <a href="deere/4960.html" target="_blank">
+            <img src="./deere/4960.jpg" class="auto-style1"></a></td>
         <td style="width: 243px">John Deere Model 4960 w/ FWA in 1/16th scale<br>
           <br>Precision Key Series #10 <font color="#000000">in the Precision Key
             Series</font>
@@ -173,8 +237,8 @@
         <td style="width: 204px">#9<br>Precision Key<br><br>#45177<br>2010<br>
           <br>1/16 scale</td>
         <td style="width: 243px">
-          <a href="http://www.keepingitgreen.com/sbi/pc/deere/2510/2510.html" target="_blank">
-            <img src="./deere/2510.jpg"></a></td>
+          <a href="deere/2510.html" target="_blank">
+            <img src="./deere/2510.jpg" class="auto-style1"></a></td>
         <td style="width: 243px">John Deere Model 2510 <br><br>Precision Key Series
           #9 <font color="#000000">in the Precision Key Series</font>
         </td>
@@ -214,7 +278,7 @@
         <td style="width: 204px">#5<br>Precision Key<br><br>#15904<br>2008<br>1/16
           scale</td>
         <td style="width: 243px">
-          <a href="http://home.centurytel.net/dutzow/web/precisionclassic/large/620lp-lg.jpg" target="_blank">
+          <a href="deere/620large.jpg" target="_blank">
             <img border="0" src="./deere/620.jpg"></a></td>
         <td style="width: 243px">John Deere 620 Hi Crop<br><br>Fifth in the Precision
           Key Series</td>
@@ -276,7 +340,7 @@
     </table>
     <br>
     <h1>Precision Classic Series</h1>
-    <table align="center" border="1" width="100%" class="maintable">
+    <table class="maintable">
       <tr>
         <td>No 1 #560<br><br>1990 <br><br>1/16 scale </td>
         <td>
@@ -454,14 +518,14 @@
         <td>
           <img border="0" src="./deere/JD25.jpg"></td>
         <td>Model 5010 Tractor</td>
-        <td></td>
+        <td id="15608"></td>
       </tr>
     </table>
     <br>
 
     <h1>Other Precisions</h1>
 
-    <table border="1" align="center" width="100%" class="maintable">
+    <table class="maintable">
       <tr>
         <td>#15881<br><br>2006<br>1/16 scale </td>
         <td>
@@ -488,7 +552,7 @@
       <tr>
         <td>#15511<br><br>2005<br>1/16 scale </td>
         <td>
-          <a href="http://home.centurytel.net/dutzow/web/precisionclassic/140/140.htm" target="_blank">
+          <a href="deere/140.html" target="_blank">
             <img border="0" src="./deere/140prec.jpg"></a></td>
         <td>Model 140 w/ equipment - 2nd of the lawn and garden line of precisions</td>
         <td id="15511"></td>
@@ -532,7 +596,7 @@
       <tr>
         <td>#15774<br><br>2006<br>1/16 scale </td>
         <td>
-          <a href="http://home.centurytel.net/dutzow/web/precisionclassic/large/544J-l.jpg" target="_blank">
+          <a href="deere/544Jlargel.jpg" target="_blank">
             <img border="0" src="./deere/744.jpg"></a></td>
         <td>#2 in the construction line - 544J wheel loader</td>
         <td id="15774"></td>
@@ -608,153 +672,159 @@
       <br>
       <b>BUY,SELL,TRADE</b> - Have a collection to sell? Have extras to barter with? Please contact us at 636-221-2591
     </footer><br>
-    <h1 align="center">1-636-221-2591</h1>
-    <h2 align="center">precisionclassic@schweissguth.com</h2>
+    <h1 align="center"><a href="tel:636-221-2592">636-221-2592</a></h1>
+    <h2 align="center"><a href="mailto:precisionclassic@schweissguth.com">precisionclassic@schweissguth.com</a></h2>
+
     <script>
       $(function() {
-        var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1IOCHQu-gHoDctHqFTMVjat7UlaJ7LXuV6vCJuNdoBnY/1/public/full?alt=json';
+        var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1IOCHQu-gHoDctHqFTMVjat7UlaJ7LXuV6vCJuNdoBnY/2/public/full?alt=json';
         $.getJSON(sheetUrl, function(data) {
           entry = data.feed.entry;
           console.log(entry);
+          var id;
+          var table;
 
           entry.forEach(function(item, index) {
 
-            try {
-              var id = document.getElementById(item.gsx$id.$t);
-              var table = document.createElement("TABLE");
-              var row = table.insertRow();
-              var cell0 = row.insertCell(0)
-
-              if (item.gsx$soldout.$t) {
-                //id.innerHTML = "";
-                cell0.innerHTML = "Sold Out";
-                id.appendChild(table);
-              } else {
-
-                var cell1 = row.insertCell(1)
+            if (item.gsx$id.$t) {
+              //console.log(item.gsx$id.$t)
+              id = document.getElementById(item.gsx$id.$t);
+              table = document.createElement("TABLE");
+              table.className = "listing";
+            } else {
+              try {
+                var row = table.insertRow();
+                var cell0 = row.insertCell(0)
 
 
-                cell0.innerHTML = item.gsx$text.$t;
-                if (item.gsx$seemorelink.$t) {
-                  var a = document.createElement("A")
-                  a.href = item.gsx$seemorelink.$t
-                  a.innerHTML = "See images"
-                  cell0.append(" ");
-                  cell0.append(a);
-                }
-
-                var form = document.createElement("FORM");
-
-                if (isNaN(item.gsx$amount.$t) == true) {
-                  form.innerHTML = item.gsx$amount.$t;
+                if (item.gsx$soldout.$t) {
+                  //id.innerHTML = "";
+                  cell0.innerHTML = "Sold Out";
+                  id.appendChild(table);
                 } else {
-                  cell0.innerHTML += ' <b>$' + item.gsx$amount.$t + '</b>';
+                  cell0.className = "cell0";
 
-                  form.action = "https://www.paypal.com/cgi-bin/webscr";
-                  form.method = "post";
-                  form.target = "paypal";
-
-                  var alt = document.createElement("INPUT");
-                  alt.type = "image";
-                  alt.src = "https://www.paypal.com/en_US/i/btn/x-click-but22.gif";
-                  alt.alt = "Make payments with PayPal - it is fast, free and secure!";
-                  alt.name = "I8";
-                  form.appendChild(alt);
-
-                  var add = document.createElement("INPUT");
-                  add.name = "add";
-                  add.type = "hidden";
-                  add.value = "1";
-                  form.appendChild(add);
-
-                  var cmd = document.createElement("INPUT");
-                  cmd.name = "cmd";
-                  cmd.type = "hidden";
-                  cmd.value = "_cart";
-                  form.appendChild(cmd);
-
-                  var business = document.createElement("INPUT");
-                  business.name = "business";
-                  business.type = "hidden";
-                  business.value = "precisionclassic@schweissguth.com";
-                  form.appendChild(business);
+                  var cell1 = row.insertCell(1)
 
 
-                  var itemname = document.createElement("INPUT");
-                  itemname.name = "item_name";
-                  itemname.type = "hidden";
-                  itemname.value = item.gsx$itemname.$t;
-                  form.appendChild(itemname);
+                  cell0.innerHTML = item.gsx$text.$t;
+                  if (item.gsx$seemorelink.$t) {
+                    var a = document.createElement("A")
+                    a.href = item.gsx$seemorelink.$t
+                    a.innerHTML = "See images"
+                    cell0.append(" ");
+                    cell0.append(a);
+                  }
 
-                  var itemnumber = document.createElement("INPUT");
-                  itemnumber.name = "item_number";
-                  itemnumber.type = "hidden";
-                  itemnumber.value = item.gsx$itemnumber.$t;
-                  form.appendChild(itemnumber);
+                  var form = document.createElement("FORM");
 
-                  var amount = document.createElement("INPUT");
-                  amount.name = "amount";
-                  amount.type = "hidden";
-                  amount.value = item.gsx$amount.$t;
-                  form.appendChild(amount);
+                  if (isNaN(item.gsx$amount.$t) == true) {
+                    form.innerHTML = item.gsx$amount.$t;
+                  } else {
+                    cell0.innerHTML += ' <b>$' + item.gsx$amount.$t + '</b>';
 
-                  var nonote = document.createElement("INPUT");
-                  nonote.name = "no_note";
-                  nonote.type = "hidden";
-                  nonote.value = "1";
-                  form.appendChild(nonote);
+                    form.action = "https://www.paypal.com/cgi-bin/webscr";
+                    form.method = "post";
+                    form.target = "paypal";
 
-                  var currencycode = document.createElement("INPUT");
-                  currencycode.name = "currency_code";
-                  currencycode.type = "hidden";
-                  currencycode.value = "USD";
-                  form.appendChild(currencycode);
+                    var alt = document.createElement("INPUT");
+                    alt.type = "image";
+                    alt.src = "https://www.paypal.com/en_US/i/btn/x-click-but22.gif";
+                    alt.alt = "Make payments with PayPal - it is fast, free and secure!";
+                    alt.name = "I8";
+                    form.appendChild(alt);
 
-                  var lc = document.createElement("INPUT");
-                  lc.name = "lc";
-                  lc.type = "hidden";
-                  lc.value = "US";
-                  form.appendChild(lc);
+                    var add = document.createElement("INPUT");
+                    add.name = "add";
+                    add.type = "hidden";
+                    add.value = "1";
+                    form.appendChild(add);
 
-                  var weight = document.createElement("INPUT");
-                  weight.name = "weight";
-                  weight.type = "hidden";
-                  weight.value = item.gsx$weight.$t;
-                  form.appendChild(weight);
+                    var cmd = document.createElement("INPUT");
+                    cmd.name = "cmd";
+                    cmd.type = "hidden";
+                    cmd.value = "_cart";
+                    form.appendChild(cmd);
 
-                  var weightunit = document.createElement("INPUT");
-                  weightunit.name = "weight_unit";
-                  weightunit.type = "hidden";
-                  weightunit.value = "lbs";
-                  form.appendChild(weightunit);
+                    var business = document.createElement("INPUT");
+                    business.name = "business";
+                    business.type = "hidden";
+                    business.value = "precisionclassic@schweissguth.com";
+                    form.appendChild(business);
+
+
+                    var itemname = document.createElement("INPUT");
+                    itemname.name = "item_name";
+                    itemname.type = "hidden";
+                    itemname.value = item.gsx$itemname.$t;
+                    form.appendChild(itemname);
+
+                    var itemnumber = document.createElement("INPUT");
+                    itemnumber.name = "item_number";
+                    itemnumber.type = "hidden";
+                    itemnumber.value = item.gsx$itemnumber.$t;
+                    form.appendChild(itemnumber);
+
+                    var amount = document.createElement("INPUT");
+                    amount.name = "amount";
+                    amount.type = "hidden";
+                    amount.value = item.gsx$amount.$t;
+                    form.appendChild(amount);
+
+                    var nonote = document.createElement("INPUT");
+                    nonote.name = "no_note";
+                    nonote.type = "hidden";
+                    nonote.value = "1";
+                    form.appendChild(nonote);
+
+                    var currencycode = document.createElement("INPUT");
+                    currencycode.name = "currency_code";
+                    currencycode.type = "hidden";
+                    currencycode.value = "USD";
+                    form.appendChild(currencycode);
+
+                    var lc = document.createElement("INPUT");
+                    lc.name = "lc";
+                    lc.type = "hidden";
+                    lc.value = "US";
+                    form.appendChild(lc);
+
+                    var weight = document.createElement("INPUT");
+                    weight.name = "weight";
+                    weight.type = "hidden";
+                    weight.value = item.gsx$weight.$t;
+                    form.appendChild(weight);
+
+                    var weightunit = document.createElement("INPUT");
+                    weightunit.name = "weight_unit";
+                    weightunit.type = "hidden";
+                    weightunit.value = "lbs";
+                    form.appendChild(weightunit);
+
+
+                  }
+
+
+
+                  cell1.appendChild(form);
+                  cell1.className = "cell1";
+
+
+                  id.appendChild(table);
+                  //id.appendChild(document.createElement("BR"));
 
 
                 }
-
-
-
-                cell1.appendChild(form);
-                cell1.width = "100"
-                cell1.style = "text-align: center;";
-
-
-                id.appendChild(table);
-                //id.appendChild(document.createElement("BR"));
-
-                table.style = "text-align: left;";
+              } catch (err) {} finally {
+                console.log(table)
               }
-              table.border = "1";
-              //table.setAttribute("bordercolor", "green");
-
-              table.width = "100%"
-            } catch (err) {} finally {}
+            }
 
           });
         });
       });
 
     </script>
-
   </body>
 
 
