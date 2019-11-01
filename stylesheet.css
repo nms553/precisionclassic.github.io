@@ -1,0 +1,135 @@
+﻿html, body {
+	margin: auto;
+	text-align: center; /*   background-color: #6F6; */;
+	font-family: Tahoma, Verdana, sans-serif;
+	font-size: 0.95em;
+	color: dark-gray;
+}
+.maintable {
+	table-layout: fixed;
+	width: 100%;
+	text-align: center;
+	word-break: break-word; /*  border: thin solid;
+        border-collapse:collapse; */;
+	height: 100%;
+	border-spacing: 0px 0px;
+}
+.maintable td {
+}
+.maintable > tbody > tr {
+	background-color: white;
+}
+table.maintable > tbody > tr > td:first-child {
+	width: 17% !important;
+       /* border-left: thin black solid;
+        border-bottom: thin black solid;
+        border-top: thin black solid; */
+}
+table.maintable>tbody>tr>td:nth-child(2) {
+        width: 21% !important;
+        background-color: white;
+      /*  border-bottom: thin black solid;
+        border-top: thin black solid;*/
+      }
+table.maintable>tbody>tr>td:nth-child(3) {
+        width: 18% !important;
+        
+      /*  border-right: thin black dashed;
+        border-bottom: thin black solid;
+        border-top: thin black solid;*/
+      }
+table.maintable>tbody>tr>td:nth-child(4) {
+      padding: 35px 5px 35px 35px;
+       /* border-right: thin black solid;
+        border-bottom: thin black solid;
+        border-top: thin black solid;*/
+      }
+go {
+	color: rgb(128, 128, 0);
+	font-weight: bold;
+}
+sp {
+	color: rgb(255, 0, 0);
+	font-weight: bold;
+}
+footer {
+	font-size: 0.75em;
+	text-align: justify;
+	background-color: lightgray;
+	padding: 40px 20%;
+}
+.listing {
+	border-collapse: collapse;
+	border-style: hidden;
+	height: 100%;
+	width: 100%;
+}
+.cell1 {
+	width: 100px;
+}
+.cell0 {
+	font-weight: bolder;
+	text-align: left;
+}
+.listing td {
+	border: thin black dashed;
+	padding: 10px;
+}
+#d1 {
+	max-width: 100%;
+	height: 50px;
+	background-color: rgb(55,124,43);
+}
+#d2 {
+	max-width: 100%;
+	height: 50px;
+	background-color: rgb(255,222,0);
+}
+#d6 {
+	max-width: 100%;
+	height: 25px;
+}
+#d3 {
+	max-width: 1000px;
+	background-color: white;
+	margin: auto;
+}
+#d4 {
+	max-width: 1000px;
+	margin: auto;
+}
+#d7 {
+	max-width: 1000px;
+	margin: auto;
+}
+table.maintable > tbody > tr > td {
+	border-bottom: medium green solid;
+	border-top: medium yellow solid;
+	border-right: none;
+	border-left: none;
+	padding: 35px 5px;
+	/*border: thin solid;
+	border: thin black solid;*/
+}
+.maintable > tbody > tr:last-child > td {
+	border-bottom: none;
+}
+.maintable > tbody > tr:first-child > td {
+	border-top: none;
+}
+/*.maintable > tbody> tr:nth-child(even) {
+	background-color:green !important;
+}
+.maintable > tbody> tr:nth-child(odd) {
+	background-color:yellow !important;
+} */
+h1, h2, h3 {
+	text-align: center;
+	color: rgb(55,124,43);
+	text-decoration: underline;
+}
+
+a#jd {color: green;}
+a#caseih {color: red;}
+a#agco {color: orange;}
+a#ford {color: blue;}
