@@ -14,10 +14,12 @@
     <style>
       html,
       body {
-        max-width: 1000px;
         margin: auto;
         text-align: center;
-        background-color: #6F6;
+     /*   background-color: #6F6; */
+        font-family: Tahoma, Verdana, sans-serif;
+        font-size: 0.95em;
+        color: dark-gray;
       }
 
       .maintable {
@@ -25,15 +27,15 @@
         width: 100%;
         text-align: center;
         word-break: break-word;
-        /* border: thin black solid;
-        border-collapse:collapse;*/
+      /*  border: thin solid;
+        border-collapse:collapse; */
         height: 100%;
-        border-spacing: 0px 20px;
+        border-spacing: 0px 0px;
       }
 
       .maintable td {
         /*border: thin black solid;*/
-        padding: 10px;
+        
       }
 
       .maintable>tbody>tr {
@@ -43,29 +45,31 @@
 
       table.maintable>tbody>tr>td:first-child {
         width: 17% !important;
-        border-left: thin black solid;
+       /* border-left: thin black solid;
         border-bottom: thin black solid;
-        border-top: thin black solid;
+        border-top: thin black solid; */
       }
 
       table.maintable>tbody>tr>td:nth-child(2) {
         width: 21% !important;
         background-color: white;
-        border-bottom: thin black solid;
-        border-top: thin black solid;
+      /*  border-bottom: thin black solid;
+        border-top: thin black solid;*/
       }
 
       table.maintable>tbody>tr>td:nth-child(3) {
-        width: 19% !important;
-        border-right: thin black dashed;
+        width: 18% !important;
+        
+      /*  border-right: thin black dashed;
         border-bottom: thin black solid;
-        border-top: thin black solid;
+        border-top: thin black solid;*/
       }
 
       table.maintable>tbody>tr>td:nth-child(4) {
-        border-right: thin black solid;
+      padding: 35px 5px 35px 35px;
+       /* border-right: thin black solid;
         border-bottom: thin black solid;
-        border-top: thin black solid;
+        border-top: thin black solid;*/
       }
 
 
@@ -95,27 +99,95 @@
       }
 
       .cell1 {
-
+		
         width: 100px;
       }
 
       .cell0 {
-
+		font-weight: bolder;
         text-align: left;
       }
 
       .listing td {
         border: thin black dashed;
-
+        padding: 10px
       }
+      
+      #d1 {
+	max-width: 100%;
+	height: 50px;
+	background-color: rgb(55,124,43);
+}
+ #d2 {
+ 	max-width: 100%;
+	height: 50px;
+	background-color:rgb(255,222,0);
+}
+
+#d6 {
+	max-width: 100%;
+	height: 25px;
+}
+
+ #d3 {
+	max-width: 1000px;
+	background-color:white;
+	margin:auto;
+}
+
+ #d4 {
+	max-width: 1000px;
+	margin:auto;	
+}
+
+#d7 {
+	max-width:1000px;
+	margin: auto;
+}
+
+table.maintable > tbody> tr> td {
+ 
+	border-bottom: medium green solid;
+	border-top: medium yellow solid;
+	border-right: none;
+	border-left: none; 
+	padding: 35px 5px;
+	/*border: thin solid;
+	border: thin black solid;*/
+}
+
+.maintable > tbody > tr:last-child > td {
+	border-bottom: none;
+}
+
+.maintable > tbody > tr:first-child > td {
+	border-top: none;
+}
+
+/*.maintable > tbody> tr:nth-child(even) {
+	background-color:green !important;
+}
+.maintable > tbody> tr:nth-child(odd) {
+	background-color:yellow !important;
+} */
+
+h1, h2, h3 {
+	text-align: center;
+	color: rgb(55,124,43);
+}
+
 
     </style>
-    <br>
+   
   </head>
 
   <body>
-    <img style="max-width: 100%;" src="./pcbanner.jpg">
-
+  <div id="d1"></div>
+  <div id="d2"> </div>
+   <div id="d6"></div>
+   <br>
+   <div id="d7"><img style="max-width: 95%;" src="./pcbanner.jpg"></div>
+<div id="d3">
     <br>Click here for
     <a href="./ih.htm">
       <font color="#FF0000">Case IH</font>
@@ -144,8 +216,9 @@
     Please contact us for details.
     <br><br>
     <strong>Coming Fall of 2019. The first release of the new line of John Deere Precisions, a John Deere 620 w/ plow. More details coming soon!!!</strong>
-    <br /><br>
-
+    <br /><br><br><h2>John Deere Precisions:</h2><br>
+    </div>
+<div id="d4">
     <table id="maintable" class="maintable">
       <tr>
         <td style="width: 204px">100 year tractor anniversary<br>Only 2018
@@ -339,7 +412,7 @@
       </tr>
     </table>
     <br>
-    <h1>Precision Classic Series</h1>
+    <h2>Precision Classic Series:</h2>
     <table class="maintable">
       <tr>
         <td>No 1 #560<br><br>1990 <br><br>1/16 scale </td>
@@ -523,7 +596,7 @@
     </table>
     <br>
 
-    <h1>Other Precisions</h1>
+    <h2>Other Precisions:</h2>
 
     <table class="maintable">
       <tr>
@@ -653,6 +726,7 @@
         <td id="15752"></td>
       </tr>
     </table>
+    </div>
     <br />
     <footer>
       <br>
