@@ -22,7 +22,7 @@
     <br>
     <div id="d7"><img style="max-width: 95%;" src="./pcbanner.jpg"></div>
     <div id="d3">
-      <br>Click here for 
+      <br>Click here for
       <a id="caseih" href="./ih.htm">Case IH</a>,
       <a id="agco" href="./ac.htm">Agco</a>, and
       <a id="ford" href="./ford.htm">Ford</a> precisions.
@@ -44,8 +44,7 @@
       Please contact us for details.
       <br><br>
       <strong>Coming Fall of 2019. The first release of the new line of John Deere Precisions, a John Deere 620 w/ plow. More details coming soon!!!</strong>
-      <br /><br><br>
-      <h2>John Deere Precisions:</h2><br>
+      <br><br><br>
     </div>
     <div id="d4">
       <table id="maintable" class="maintable">
@@ -240,8 +239,8 @@
           <td id="15168"></td>
         </tr>
       </table>
-      <br>
-      <h2>Precision Classic Series:</h2>
+      <br><br><br><br>
+      <h2>Original Precision Line</h2>
       <table class="maintable">
         <tr>
           <td>No 1 #560<br><br>1990 <br><br>1/16 scale </td>
@@ -423,7 +422,7 @@
           <td id="15608"></td>
         </tr>
       </table>
-      <br>
+      <br><br><br><br><br>
 
       <h2>Other Precisions:</h2>
 
@@ -599,10 +598,12 @@
                 var row = table.insertRow();
                 var cell0 = row.insertCell(0)
 
-
-                if (item.gsx$allsoldout.$t) {
+                var txt = item.gsx$text.$t.toLowerCase().replace(/ /g, '');
+                if (txt == "soldout") {
+                  //console.log(txt);
                   //id.innerHTML = "";
-                  cell0.innerHTML = "Sold Out";
+                  cell0.innerText = "Sold Out";
+                  cell0.className = "soldout";
                   id.appendChild(table);
                 } else {
                   cell0.className = "cell0";
@@ -719,7 +720,7 @@
 
                 }
               } catch (err) {} finally {
-                console.log(table)
+                //   console.log(table)
               }
             }
 

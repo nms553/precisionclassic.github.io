@@ -71,6 +71,11 @@ footer {
 	font-weight: bolder;
 	text-align: left;
 }
+.soldout {
+	font-weight: bolder;
+	text-align: center;
+}
+
 .listing td {
 	border: thin black dashed;
 	padding: 10px;
@@ -112,6 +117,7 @@ table.maintable > tbody > tr > td {
 	border: thin black solid;*/
 }
 .maintable > tbody > tr:last-child > td {
+	/*border-bottom: medium rgb(55,124,43) dashed;*/
 	border-bottom: none;
 }
 .maintable > tbody > tr:first-child > td {
@@ -125,8 +131,10 @@ table.maintable > tbody > tr > td {
 } */
 h1, h2, h3 {
 	text-align: center;
-	color: rgb(55,124,43);
-	text-decoration: underline;
+	color: white;
+	/*text-decoration: underline;
+	padding: 50px 0px 0px 0px;*/
+	background-color: rgb(55,124,43)
 }
 
 a#jd {color: green;}
