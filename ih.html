@@ -1,221 +1,691 @@
 <!DOCTYPE html>
 <html>
-<head>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-	</script>
-	<style>
-	body {width: 975px; margin: auto; background-color: #cc0033; color: white;}
-	table, td {text-align: center;}
-	.td1outer, .td3outer {width:150px;}
-	.td2outer {width:185px; max-width: 185px; background-color: white;}   
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta content="text/html; charset=windows-1252" http-equiv="Content-Type">
+    <meta content="John Deere, precision, precisions, classic, classics, ertl, tractors" name="keywords">
+    <meta content="Huge selection of new and retired John Deere Precision Classics" name="description">
+    <meta content="en-us" http-equiv="Content-Language">
+    <meta content="blank 1110" name="Microsoft Theme">
 
-	
-  .td1inner {text-align: left;}
-  .td2inner {width:100px;}
-	go {color: yellow; font-weight: bold;}
-	sp {color: rgb(0, 255, 0); font-weight: bold;}
+    <title>www.precisionclassic.com - New and retired John Deere Precision Classics</title>
 
-	footer {
-	   font-family: Arial, Helvetica, sans-serif;
-	   display: block;
-	   width: 80%;
-	   margin: auto;
-	   text-align: left;
-	   font-size: 0.75em;
-	}
-	img {display: block; max-width: 100%; margin: auto;}
-	form {margin-bottom: 0;}
-	.auto-style1 {
-		font-size: 72px;
-		text-align:center;
-	}
-	</style>
-	<title></title>
-</head>
-<body content="en-us">
-	<br>
-	<a href="./"><img border="0" src="https://precisionclassic.github.io/pcbanner.jpg" width="100%"></a>
-	<h1 class="auto-style1">Under Construction</h1>
-	<p align="center">Click here for <a href="./index.html"><font color="#008000">DEERE</font></a>
-<a href="./ac.html"><font color="#000000">AGCO</font></a><font color="#FFFFFF">
-</font>or <a href="./ford.html">
-<font color="#000080">FORD</font> </a> precisions.<br>
-	<br>
-	PrecisionClassic.com has partnered with CS Weathering to take the details of the Precision lines to the next level. Click each model listed for samples of CS Weathering finished products. <a href="./weathered/4450.html" target="_blank">John Deere 4450</a> - <a href="./weathered/1570.html" target="_blank">Case 1570</a> - <a href="./weathered/4840.html" target="_blank">John Deere 4840</a> - <a href="./weathered/5488.html" target="_blank">Case IH 5488</a> - <a href="./weathered/4440.html" target="_blank">John Deere 4440</a> - <a href="./weathered/856.html" target="_blank">Farmall 856</a> - <a href="./weathered/560.html" target="_blank">Farmall 460</a> Please contact us for details.<br><br>
-<span id="p">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="ih.css">
 
-</span></p>
-	<table border="1" id="table" width="100%"></table>
-	<script type= text/javascript>
-	$(function()
-	{
-	var sheetUrlA = 'https://spreadsheets.google.com/feeds/list/1WA8kUKQImLMi-6aFWJcGyb6N9wwqmL5kZTJGjIPMLYo/3/public/full?alt=json';
-	$.getJSON(sheetUrlA, function(dataA)
-	{
-	 var entryA = dataA.feed.entry;
-	 console.log(entryA);
-	 
-	 entryA.forEach(
-	 function(itemA, indexA) 
-	 {
-   if (itemA.gsx$itemnumber.$t == "section!") {
-   var troutersection = document.createElement("TR");
-   var td1outersection = document.createElement("TD");
-   td1outersection.innerHTML = itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />");
-   td1outersection.setAttribute("colspan", "4");
-	 troutersection.appendChild(td1outersection);
-   table.appendChild(troutersection);
-   
-   }
-   
-   else if (itemA.gsx$itemnumber.$t == "message!") {
-   document.getElementById("p");
-   p.innerHTML += '<i>' + itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />") + '</i>';
-   }
-   
-   else {
-	 var trouter = document.createElement("TR");
-	 var td1outer = document.createElement("TD");
-	 var td2outer = document.createElement("TD");
-	 var td3outer = document.createElement("TD");
-	 var td4outer = document.createElement("TD");
-	 var tableinner = document.createElement("TABLE");
-	 
-	 var picturelink = "";
-	 if (itemA.gsx$picturelink.$t !== "") {picturelink = '<a href="' + itemA.gsx$picturelink.$t + '" target="_blank"><img src="' + itemA.gsx$thumbnaillink.$t + '"><\/a>';}
-	else {picturelink = '<img src="' + itemA.gsx$thumbnaillink.$t + '">';}
-		
-	 td1outer.innerHTML = itemA.gsx$modelinfo.$t.replace(/\n/g, "<br />");
-	 td2outer.innerHTML = picturelink;
-	 td3outer.innerHTML = itemA.gsx$description.$t.replace(/\n/g, "<br />");
-	 td1outer.setAttribute("class", "td1outer");
-	 td2outer.setAttribute("class", "td2outer");
-	 td3outer.setAttribute("class", "td3outer");
-	 td4outer.setAttribute("class", "td4outer");
-	 tableinner.setAttribute("id", itemA.gsx$itemnumber.$t);
-	 tableinner.setAttribute("border", "1");
-	 tableinner.setAttribute("width", "100%");
-	 
-	 td4outer.appendChild(tableinner);
-	 trouter.appendChild(td1outer);
-	 trouter.appendChild(td2outer);
-	 trouter.appendChild(td3outer);
-	 trouter.appendChild(td4outer);
-	 table.appendChild(trouter);
-	     
-	 }
-   });
-	 });
-	 });
-	</script> <!-- individual listings below  -->
-	
-	<script type= text/javascript>
-setTimeout(function(){ 
-	 $(function()
-	{
-	var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1WA8kUKQImLMi-6aFWJcGyb6N9wwqmL5kZTJGjIPMLYo/4/public/full?alt=json';
-	$.getJSON(sheetUrl, function(data)
-	{
-	 var entry = data.feed.entry;
-	 console.log(entry);
-	 
-	 entry.forEach(
-	 function(item, index) 
-	 {
-	 var seemorelink = "";
-	 
-   if(item.gsx$seemorelink.$t !== "") {
-   seemorelink = '&nbsp;<a href="' + item.gsx$seemorelink.$t + '" target="_blank">See&nbsp;pictures<\/a>';
-   }
-	 
-   else {
-   seemorelink = "";
-   }
-	 
-var y = document.getElementById(item.gsx$matchingnumber.$t);
+  </head>
 
-if (y !== null) {
-	  if (item.gsx$paypalprice.$t == "" || item.gsx$paypalprice.$t == "SO" || item.gsx$paypalprice.$t == "blank") {
-  	var trinnerblank = document.createElement("TR");
-		var td1innerblank = document.createElement("TD");
-    td1innerblank.innerHTML = item.gsx$desc.$t.replace(/\n/g, "<br />");
-		trinnerblank.appendChild(td1innerblank);
-		y.setAttribute("border", "0");
-		document.getElementById(item.gsx$matchingnumber.$t).appendChild(trinnerblank);
-	   }
-     
-	   else if (item.gsx$paypalprice.$t == "Call" || item.gsx$paypalprice.$t == "call" || item.gsx$paypalprice.$t == "Sold out" || item.gsx$paypalprice.$t == "sold out" || item.gsx$paypalprice.$t == "Sold Out" || item.gsx$paypalprice.$t == "On hold" || item.gsx$paypalprice.$t == "on hold" || item.gsx$paypalprice.$t == "On Hold") {
-     
-  var trinnercallorSO = document.createElement("TR");
-	var td1innercallorSO = document.createElement("TD");
-	var td2innercallorSO = document.createElement("TD");
-	td1innercallorSO.innerHTML += item.gsx$desc.$t.replace(/\n/g, "<br />") + seemorelink;
-	td2innercallorSO.innerHTML += item.gsx$paypalprice.$t
+  <body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d6"></div>
+    <br>
+    <div id="d7"><a href="./index.html"><img style="max-width: 95%;" src="./pcbanner.jpg"></a></div>
+    <div id="d3">
+      <br>Click here for
+      <a id="caseih" href="./ih.html">Case IH</a>,
+      <a id="agco" href="./ac.html">Agco</a>, and
+      <a id="ford" href="./ford.html">Ford</a> precisions.
+      <em>Last updated Jul 5 2019</em>
 
-	td1innercallorSO.setAttribute("class", "td1inner");
-	td2innercallorSO.setAttribute("class", "td2inner");
-	trinnercallorSO.appendChild(td1innercallorSO);
-	trinnercallorSO.appendChild(td2innercallorSO);
-	document.getElementById(item.gsx$matchingnumber.$t).appendChild(trinnercallorSO);
-	       
-	       
-	   }
-	   else {
-	var trinner = document.createElement("TR");
-	var td1inner = document.createElement("TD");
-	var td2inner = document.createElement("TD");
-	td1inner.innerHTML += item.gsx$desc.$t.replace(/\n/g, "<br />") + seemorelink;
-	td2inner.innerHTML += '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">'
-	+ '<input alt="Make payments with PayPal - it is fast, free and secure!" border="0" name="I8" src="https://www.paypal.com/en_US/i/btn/x-click-but22.gif" type="image">'
-	+ '<input name="add" type="hidden" value="1">'
-	+ '<input name="cmd" type="hidden" value="_cart">'
-	+ '<input name="business" type="hidden" value="precisionclassic@schweissguth.com">'
-	+ '<input name="item_name" type="hidden" value="' + item.gsx$paypaldesc.$t + '">'
-	+ '<input name="item_number" type="hidden" value="' + item.gsx$paypalitem.$t + '">'
-	+ '<input name="amount" type="hidden" value="' + item.gsx$paypalprice.$t + '">'
-	+ '<input name="no_note" type="hidden" value="1">'
-	+ '<input name="currency_code" type="hidden" value="USD">'
-	+ '<input name="lc" type="hidden" value="US">'
-	+ '<input name="weight" type="hidden" value="' + item.gsx$weight.$t + '">'
-	+ '<input name="weight_unit" type="hidden" value="lbs">' + '<\/form>';
+      <br>
+      <br />
 
-	td1inner.setAttribute("class", "td1inner");
-	td2inner.setAttribute("class", "td2inner");
-	trinner.appendChild(td1inner);
-	trinner.appendChild(td2inner);
-	document.getElementById(item.gsx$matchingnumber.$t).appendChild(trinner);
-	   }
-	 
+      <br>
+
+      PrecisionClassic.com has partnered with CS Weathering to take the details of the Precision lines to the next level. Click each model listed for samples of CS Weathering finished products.
+      <a href="./weathered/4450.html" target="_blank">John Deere 4450</a> -
+      <a href="./weathered/1570.html" target="_blank">Case 1570</a> -
+      <a href="./weathered/4840.html" target="_blank">John Deere 4840 </a>-
+      <a href="./weathered/5488.html" target="_blank">Case IH 5488</a> -
+      <a href="./weathered/4440.html" target="_blank">John Deere 4440</a> -
+      <a href="./weathered/856.html" target="_blank">Farmall 856</a> -
+      <a href="./weathered/560.html" target="_blank">Farmall 460</a>
+      Please contact us for details.
+      <br><br>
+      <strong>Coming Fall of 2019. The first release of the new line of John Deere Precisions, a John Deere 620 w/ plow. More details coming soon!!!</strong>
+      <br><br><br>
+    </div>
+    <div id="d4">
+      <table id="maintable" class="maintable">
+        <tr>
+          <td style="width: 204px">100 year tractor anniversary<br>Only 2018
+            produced <br><br>#LP68805 <br>2018 <br>1/16 scale <br></td>
+          <td style="width: 243px">
+            <a href="./deere/wblarge.JPG">
+              <img src="./deere/wb.jpg"></a></td>
+          <td style="width: 243px">Precision Elite #5<br>766 International </td>
+          <td id="wbs"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#5<br>Precision Elite<br><br>#64435<br>2017<br>
+            1/16 scale</td>
+          <td style="width: 243px">
+            <a href="deere/4320.html">
+              <img class="auto-style1" src="./deere/4320.jpg"></a></td>
+          <td style="width: 243px">Precision Elite #4<br>1026 International</td>
+          <td id="64435"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">Special Edition<br>25th Precision Anniversary<br>
+            Only 1000 made!!<br><br>2016<br>1/16 scale</td>
+          <td style="width: 243px">
+            <a href="deere/7800Gold.html">
+              <img src="./deere/7800gold.jpg" class="auto-style1"></a></td>
+          <td style="width: 243px">Precision Elite #3<br>1568 International </td>
+          <td id="45507N"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#4<br>Precision Elite<br><br>#45507<br>2015<br>
+            1/16 scale</td>
+          <td style="width: 243px">
+            <a href="deere/7800.html" target="_blank">
+              <img src="./deere/7800.jpg" class="auto-style1"></a></td>
+          <td style="width: 243px">Precision Elite #2<br>1570 Case
+          </td>
+          <td id="45507"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#3<br>Precision Elite <br><br>#45464<br>2014<br>
+            1/16 scale</td>
+          <td style="width: 243px">
+            <a href="deere/4840.html" target="_blank">
+              <img src="./deere/4840.jpg" class="auto-style1"></a></td>
+          <td style="width: 243px">Precision Elite #2<br>1570 chase unit
+          </td>
+          <td id="45464"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#2<br>Precision Elite<br><br>#45358<br>2013<br>
+            <br>1/16 scale</td>
+          <td style="width: 243px">
+            <a href="deere/6030.html" target="_blank">
+              <img src="./deere/6030.jpg" class="auto-style1"></a></td>
+          <td style="width: 243px">New Precision Elite<br>Series 856
+          </td>
+          <td id="45358"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#1<br>Precision Elite<br><br>#45289<br>2011<br>
+            <br>1/16 scale</td>
+          <td style="width: 243px">
+            <a href="deere/4450.html" target="_blank">
+              <img src="./deere/4450.JPG" class="auto-style1"></a></td>
+          <td style="width: 243px">IH 5488 Precision Key #10<br>
+          </td>
+          <td id="45289"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#10<br>Precision Key<br><br>#45238<br>2010<br>
+            <br>1/16 scale</td>
+          <td style="width: 243px">
+            <a href="deere/4960.html" target="_blank">
+              <img src="./deere/4960.jpg" class="auto-style1"></a></td>
+          <td style="width: 243px">1066 Precision Key #9
+          </td>
+          <td id="45238"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#9<br>Precision Key<br><br>#45177<br>2010<br>
+            <br>1/16 scale</td>
+          <td style="width: 243px">
+            <a href="deere/2510.html" target="_blank">
+              <img src="./deere/2510.jpg" class="auto-style1"></a></td>
+          <td style="width: 243px">1456 w/ canopy #8 Precision Key
+          </td>
+          <td id="45177"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#8<br>Precision Key<br><br>#45106<br>2009<br>1/16
+            scale</td>
+          <td style="width: 243px">
+            <img border="0" src="./deere/r.JPG"></td>
+          <td style="width: 243px">#7 6588 Precision Key
+          </td>
+          <td id="45106"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#7<br>Precision Key<br><br>#15906<br>2009<br>1/16
+            scale</td>
+          <td style="width: 243px">
+            <img border="0" src="./deere/7020.jpg"></td>
+          <td style="width: 243px">#6 1086 Precision Key</td>
+          <td id="15906"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#6<br>Precision Key<br><br>#15953<br>2008<br>1/16
+            scale </td>
+          <td style="width: 243px">
+            <img border="0" src="./deere/4020STD.jpg"></td>
+          <td style="width: 243px">#5 H w/ mounted planter Precision Key</td>
+          <td id="15953"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#5<br>Precision Key<br><br>#15904<br>2008<br>1/16
+            scale</td>
+          <td style="width: 243px">
+            <a href="deere/620large.jpg" target="_blank">
+              <img border="0" src="./deere/620.jpg"></a></td>
+          <td style="width: 243px">#4 806 Diesel Precision Key</td>
+          <td id="15904"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#4<br>Precision Key<br><br>#15851<br>2007<br>1/16
+            scale</td>
+          <td style="width: 243px">
+            <img border="0" src="./deere/420.JPG"></td>
+          <td style="width: 243px">#3 1468 Precision Key</td>
+          <td id="15851"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#3<br>Precision Key<br><br>#15306<br>2006<br>1/16
+            scale </td>
+          <td style="width: 243px">
+            <img border="0" src="./deere/3020.jpg"></td>
+          <td style="width: 243px">#2 3588 Precision Key</td>
+          <td id="15306"></td>
+        </tr>
+        <tr>
+          <td style="width: 204px">#2<br>Precision Key<br><br>#15307<br>2005<br>1/16
+            scale </td>
+          <td style="width: 243px">
+            <img border="0" src="./deere/g.jpg"></td>
+          <td style="width: 243px">#1 1206 Precision Key </td>
+          <td id="15307"></td>
+        </tr>
+        </table>
+      <br><br><br><br>
+      <h2>Original Precision Line</h2>
+      <table class="maintable">
+        <tr>
+          <td>No 1 #560<br><br>1990 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/deereab.jpg"></td>
+          <td>Unstyled Model A on Steel Wheels</td>
+          <td id="560"></td>
+        </tr>
+        <tr>
+          <td>No 2 #5633 1991 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/acult.jpg"></td>
+          <td>Unstyled A with Cultivator</td>
+          <td id="5633"></td>
+        </tr>
+        <tr>
+          <td>No 3 #5638<br><br>1992 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/4020nf.jpg"></td>
+          <td>Model 4020 Narrow Front</td>
+          <td id="5638"></td>
+        </tr>
+        <tr>
+          <td>No 4 #5549<br><br>1993 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/4020wf.jpg"></td>
+          <td>Model 4020 Powershift Wide Front</td>
+          <td id="5549"></td>
+        </tr>
+        <tr>
+          <td>No 5 #5684<br><br>1994 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/4000.jpg"></td>
+          <td>Model 4000 with Roll Bar</td>
+          <td id="5684"></td>
+        </tr>
+        <tr>
+          <td>No 6 #5763<br><br>1994<br><br>1/16 scale</td>
+          <td>
+            <img border="0" src="./deere/plow.jpg"></td>
+          <td>F145H 5 Bottom Plow</td>
+          <td id="5763"></td>
+        </tr>
+        <tr>
+          <td>No 7 #5788 1995<br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/70.jpg"></td>
+          <td>Model 70 Row Crop Diesel</td>
+          <td id="5788"></td>
+        </tr>
+        <tr>
+          <td>No 8 #5259<br><br>1995 <br><br>1/32 scale </td>
+          <td>
+            <img border="0" src="./deere/8400.jpg"></td>
+          <td>Model 8400 (1/32 scale)<br>There were 2 versions of the 8400. The 1995
+            version had the dark horizontal lines on the hood decal as opposed to the
+            1996 version that had shadowed lettering on the decal.</td>
+          <td id="5259"></td>
+        </tr>
+        <tr>
+          <td>No 9 #5838 1996<br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/494.jpg"></td>
+          <td>494A 4 Row Planter</td>
+          <td id="5838"></td>
+        </tr>
+        <tr>
+          <td>No 10 #5832 1996<br><br>1/16 scale </td>
+          <td>
+            <a href="http://home.centurytel.net/dutzow/web/precisionclassic/large/720-l.jpg" target="_blank">
+              <img border="0" src="./deere/720.jpg"></a></td>
+          <td>Model 720 Diesel Wide Front</td>
+          <td id="5832"></td>
+        </tr>
+        <tr>
+          <td>No 11 #5770 1997 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/baler.jpg"></td>
+          <td>Model 214T Baler</td>
+          <td id="5770"></td>
+        </tr>
+        <tr>
+          <td>No 12 #5107 1998 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/modelb.jpg"></td>
+          <td>Styled Model B Tractor</td>
+          <td id="5107"></td>
+        </tr>
+        <tr>
+          <td>No 13 #5766 1998 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/730.jpg"></td>
+          <td>Model 730 Diesel Tractor</td>
+          <td id="5766"></td>
+        </tr>
+        <tr>
+          <td>No 14 #5083 1999<br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/4020picker.jpg"></td>
+          <td>Model 4020 with 237 Corn Picker</td>
+          <td id="5083"></td>
+        </tr>
+        <tr>
+          <td>No 15 #15013 2000 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/waterloo.jpg"></td>
+          <td>Waterloo Boy Tractor</td>
+          <td id="15013"></td>
+        </tr>
+        <tr>
+          <td>No 16 #15133 2000<br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/barge.jpg"></td>
+          <td>Barge Wagon</td>
+          <td id="15133"></td>
+        </tr>
+        <tr>
+          <td>No 17 #15077 2000 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/4440.jpg"></td>
+          <td>4440 Tractor </td>
+          <td id="15077"></td>
+        </tr>
+        <tr>
+          <td>No 18 #15165 2001 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/720loader.jpg"></td>
+          <td>720 with Loader and Rear Blade</td>
+          <td id="15165"></td>
+        </tr>
+        <tr>
+          <td>No 19 #15134 2001 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/haywagon.jpg"></td>
+          <td>Hay Wagon</td>
+          <td id="15134"></td>
+        </tr>
+        <tr>
+          <td>No 20 #15210 2001 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/3010.jpg"></td>
+          <td>Model 3010 Gas Tractor</td>
+          <td id="15210"></td>
+        </tr>
+        <tr>
+          <td>No 21 #15364 2002 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/630.jpg"></td>
+          <td>Model 630 Tractor</td>
+          <td id="15364"></td>
+        </tr>
+        <tr>
+          <td>No 22 #15365 2002 <br><br>1/16 scale </td>
+          <td>
+            <a href="http://home.centurytel.net/dutzow/web/precisionclassic/large/8020-l.jpg" target="_blank">
+              <img border="0" src="./deere/8020.jpg"></a></td>
+          <td>Model 8020 Articulated Four Wheel Drive Tractor</td>
+          <td id="15365"></td>
+        </tr>
+        <tr>
+          <td>No 23 #15366 2003<br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/70standard.jpg"></td>
+          <td>Model 70 Standard Tractor</td>
+          <td id="15366"></td>
+        </tr>
+        <tr>
+          <td>No 24 #15487 2004 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/unstyledb.jpg"></td>
+          <td>Unstyled Model B</td>
+          <td id="15487"></td>
+        </tr>
+        <tr>
+          <td>No 25 #15608 2004 <br><br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/JD25.jpg"></td>
+          <td>Model 5010 Tractor</td>
+          <td id="15608"></td>
+        </tr>
+      </table>
+      <br><br><br><br><br>
+
+      <h2>Other Precisions:</h2>
+
+      <table class="maintable">
+        <tr>
+          <td>#15881<br><br>2006<br>1/16 scale </td>
+          <td>
+            <a href="http://home.centurytel.net/dutzow/web/precisionclassic/large/5020.jpg" target="_blank">
+              <img border="0" src="./deere/5020-1.JPG"></a></td>
+          <td>40th Anniversary 5020</td>
+          <td id="15881"></td>
+        </tr>
+        <tr>
+          <td>#15213<br><br>2001<br>1/16 scale</td>
+          <td>
+            <img border="0" src="./deere/110.jpg"></td>
+          <td>John Deere Model 110 Garden Tractor With Wagon - 1st of lawn and garden
+            tractor series</td>
+          <td id="15213"></td>
+        </tr>
+        <tr>
+          <td>#LGSET1<br><br>2004<br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/color.jpg"></td>
+          <td>Set of 4 colored lawn and garden tractors and equipment</td>
+          <td id="LGSET1"></td>
+        </tr>
+        <tr>
+          <td>#15511<br><br>2005<br>1/16 scale </td>
+          <td>
+            <a href="deere/140.html" target="_blank">
+              <img border="0" src="./deere/140prec.jpg"></a></td>
+          <td>Model 140 w/ equipment - 2nd of the lawn and garden line of precisions</td>
+          <td id="15511"></td>
+        </tr>
+        <tr>
+          <td>#15036<br><br>2000<br>1/32 scale </td>
+          <td>
+            <img border="0" src="./deere/9750.jpg"></td>
+          <td>John Deere 9750 STS Combine - First release in the Precision II series</td>
+          <td id="15036"></td>
+        </tr>
+        <tr>
+          <td>#15286<br><br>2002<br>1/32 scale </td>
+          <td>
+            <img border="0" src="./deere/9420prec.jpg"></td>
+          <td>John Deere 9420T - Second release in Precision II series</td>
+          <td id="15286"></td>
+        </tr>
+        <tr>
+          <td>#15305<br><br>2006<br>1/32 scale </td>
+          <td>
+            <img border="0" src="./deere/8530.jpg"></td>
+          <td>1/32 scale John Deere 8530 - Third Precision II release</td>
+          <td id="15305"></td>
+        </tr>
+        <tr>
+          <td>#15905<br>2008<br>1/32 scale </td>
+          <td>
+            <img border="0" src="./deere/8430.jpg"></td>
+          <td>#4 in the Precision II Series <br><br>8430 w/ front and rear duals<br>
+            <br>1/32 scale</td>
+          <td id="15905"></td>
+        </tr>
+        <tr>
+          <td>#15410<br><br>2002<br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/650h.jpg"></td>
+          <td>John Deere 650H Dozer 1st in the construction line of precisions</td>
+          <td id="15410"></td>
+        </tr>
+        <tr>
+          <td>#15774<br><br>2006<br>1/16 scale </td>
+          <td>
+            <a href="deere/544Jlargel.jpg" target="_blank">
+              <img border="0" src="./deere/744.jpg"></a></td>
+          <td>#2 in the construction line - 544J wheel loader</td>
+          <td id="15774"></td>
+        </tr>
+        <tr>
+          <td>#45086<br><br>2009<br>1/16 scale</td>
+          <td>
+            <a href="http://home.centurytel.net/dutzow/web/precisionclassic/650j.htm" target="_blank">
+              <img border="0" src="./deere/650s.JPG"></a></td>
+          <td>John Deere 650J Dozer<br><br>#3 in the construction line</td>
+          <td id="45086"></td>
+        </tr>
+        <tr>
+          <td>#15427<br><br>2002<br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/630hi.jpg"></td>
+          <td>630 High Crop -<br><br>Collectors Center - 1st release </td>
+          <td id="15427"></td>
+        </tr>
+        <tr>
+          <td>#15512<br><br>2003<br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/bwh.jpg"></td>
+          <td>BWH - Collectors Center - 2nd release </td>
+          <td id="15512"></td>
+        </tr>
+        <tr>
+          <td>#15582<br><br>2004<br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/ghc.jpg"></td>
+          <td>Model G Hi Crop - Collectors Center - 3rd release </td>
+          <td id="15582"></td>
+        </tr>
+        <tr>
+          <td>#15138<br><br>2005<br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/40t.jpg"></td>
+          <td>Model 40T Wide front with plow - Collectors Center - 4th release
+          </td>
+          <td id="15138"></td>
+        </tr>
+        <tr>
+          <td>#15819<br><br>2006<br>1/16 scale </td>
+          <td>
+            <img border="0" src="./deere/620lp-std.jpg"></td>
+          <td>Model 620 LP - Collectors Center - 5th release </td>
+          <td id="15819"></td>
+        </tr>
+        <tr>
+          <td>15752</td>
+          <td>
+            <img src="./deere/gold4020.jpg"></td>
+          <td>Special Edition Gold 4020 Deere 200th Birthday<br>1 OF ONLY 500 MADE!</td>
+          <td id="15752"></td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <footer>
+      <br>
+      <b>ABOUT</b> - This particular web site is devoted primarily to the John Deere precision replica lines. The Precision Classic lines are some of the most highly detailed replicas of farm machinery ever produced. Listed on the main page you will find a brief description of all the John Deere Precision Classic releases. In the original Precision Classic line there are 25 numbered models in the 14 year production run which started in 1990. You will also find a few special editions and variations. Throughout the years Ertl has also issued some other precisions that were not necessarily part of the original product line. These additional lines include a smaller 1/32 scale line referred to as the Series II Precision Classic line, A Precision Classic Construction line of equipment, a series of Precision Classic Lawn and Garden tractors and equipment, and a new line of precisions introduced in late 2004 marketed as the Precision Key series and finally in 2011 the Precision Elite Series. On the home page each edition will list available inventory and retail pricing. Since these collectors items are not toys you will find the prices may vary greatly depending on several points. The age of the item, the rarity of the item, condition of the replica, the completeness of the replica and the condition of the box. Therefore, inventory may vary in price accordingly. Please keep in mind that the inventory may not necessarily be new. Many items I may purchase second hand because of the length of time that they have been discontinued. Each item is opened for inspection (unless the package is factory sealed), its condition is carefully evaluated, it is returned to its original packing and notations are made along with each listing.<br>
+      <br>
+      <b>ORDERING</b> - An item can be ordered in any one of 3 different ways. Order online by clicking the "Add To Cart" button and following the prompts. Our online Credit Card processing is handled by PayPal. If you do not have an account, the web site will automatically create one for you as you enter in your payment and shipping information. If you wish to phone in your order, please contact us at 636-221-2591 8:00 to 5:00 central time, Monday - Friday. If you wish to mail your payment, please contact us first so that we may reserve your item. Payments are required within one week for reserved items.<br>
+      <br>
+      Please understand that every effort is made to keep the website up-to-date. Although it would be a rare occasion, it is possible that an item added to your cart may already be sold. In the event that the item you purchased is already sold, I reserve the right to send one of equal or greater value, or refund the full purchase price with shipping.<br>
+      <br>
+      We do not ship partial orders. If you place an order for a item not currently in stock, the entire order will be held until the order can be shipped complete.<br>
+      <br>
+      <b>RETURNS</b> - Generally speaking returns are not accepted. The items we sell are accurately described to the best of our ability. If a unit has never been opened, the buyer takes full responsibility for the item at the time of purchase. www.precisionclassic.com will not be held responsible for manufacturing defects or shortages on unopened items. If the condition of an unopened item is a concern, we will open an unopened box to check its condition and completeness. This will only be done by request on a prepaid item. If you feel the item you received was not accurately described please contact us at 636-221-2591 for a resolution.<br>
+      <br>
+      <b>SHIPPING</b> - All items are carefully packaged to insure safe arrival. Typically each item will be wrapped in plastic and then placed in an oversize box with a minimum of two inches of shredded paper to cushion and protect the replica. All items are shipped fully insured via FedEx unless another carrier is requested. Please provide us with an physical address that will have someone available to sign for the package.<br>
+      <br>
+      <b>INTERNATIONAL ORDERS</b> - The web site is not capable of calculating shipping outside the main 48 US States. We encourage our customers outside the 48 states to contact us for a shipping quote.<br>
+      <br>
+      <b>BUY,SELL,TRADE</b> - Have a collection to sell? Have extras to barter with? Please contact us at 636-221-2591
+    </footer><br>
+    <h1 align="center"><a href="tel:636-221-2592">636-221-2592</a></h1>
+    <h2 align="center"><a href="mailto:precisionclassic@schweissguth.com">precisionclassic@schweissguth.com</a></h2>
+
+    <script>
+      $(function() {
+        var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1IOCHQu-gHoDctHqFTMVjat7UlaJ7LXuV6vCJuNdoBnY/1/public/full?alt=json';
+        $.getJSON(sheetUrl, function(data) {
+          entry = data.feed.entry;
+          console.log(entry);
+          var id;
+          var table;
+
+          entry.forEach(function(item, index) {
+
+            if (item.gsx$id.$t) {
+              //console.log(item.gsx$id.$t)
+              id = document.getElementById(item.gsx$id.$t);
+              table = document.createElement("TABLE");
+              table.className = "listing";
+            } else {
+              try {
+                var row = table.insertRow();
+                var cell0 = row.insertCell(0)
+
+                var txt = item.gsx$text.$t.toLowerCase().replace(/ /g, '');
+                if (txt == "soldout") {
+                  //console.log(txt);
+                  //id.innerHTML = "";
+                  cell0.innerText = "Sold Out";
+                  cell0.className = "soldout";
+                  id.appendChild(table);
+                } else {
+                  cell0.className = "cell0";
+
+                  var cell1 = row.insertCell(1)
 
 
-	}
+                  cell0.innerHTML = item.gsx$text.$t;
+                  if (item.gsx$seemorelink.$t) {
+                    var a = document.createElement("A")
+                    a.href = item.gsx$seemorelink.$t
+                    a.innerHTML = "See images"
+                    cell0.append(" ");
+                    cell0.append(a);
+                  }
 
-	 });
-	 });
-	 });
-   }, 500);
-	</script><br>
-	<br>
-	<footer>
-		<br>
-		<b>ABOUT</b> - This particular web site is devoted primarily to the John Deere precision replica lines. The Precision Classic lines are some of the most highly detailed replicas of farm machinery ever produced. Listed on the main page you will find a brief description of all the John Deere Precision Classic releases. In the original Precision Classic line there are 25 numbered models in the 14 year production run which started in 1990. You will also find a few special editions and variations. Throughout the years Ertl has also issued some other precisions that were not necessarily part of the original product line. These additional lines include a smaller 1/32 scale line referred to as the Series II Precision Classic line, A Precision Classic Construction line of equipment, a series of Precision Classic Lawn and Garden tractors and equipment, and a new line of precisions introduced in late 2004 marketed as the Precision Key series and finally in 2011 the Precision Elite Series. On the home page each edition will list available inventory and retail pricing. Since these collectors items are not toys you will find the prices may vary greatly depending on several points. The age of the item, the rarity of the item, condition of the replica, the completeness of the replica and the condition of the box. Therefore, inventory may vary in price accordingly. Please keep in mind that the inventory may not necessarily be new. Many items I may purchase second hand because of the length of time that they have been discontinued. Each item is opened for inspection (unless the package is factory sealed), its condition is carefully evaluated, it is returned to its original packing and notations are made along with each listing.<br>
-		<br>
-		<b>ORDERING</b> - An item can be ordered in any one of 3 different ways. Order online by clicking the "Add To Cart" button and following the prompts. Our online Credit Card processing is handled by PayPal. If you do not have an account, the web site will automatically create one for you as you enter in your payment and shipping information. If you wish to phone in your order, please contact us at 636-221-2591 8:00 to 5:00 central time, Monday - Friday. If you wish to mail your payment, please contact us first so that we may reserve your item. Payments are required within one week for reserved items.<br>
-		<br>
-		Please understand that every effort is made to keep the website up-to-date. Although it would be a rare occasion, it is possible that an item added to your cart may already be sold. In the event that the item you purchased is already sold, I reserve the right to send one of equal or greater value, or refund the full purchase price with shipping.<br>
-		<br>
-		We do not ship partial orders. If you place an order for a item not currently in stock, the entire order will be held until the order can be shipped complete.<br>
-		<br>
-		<b>RETURNS</b> - Generally speaking returns are not accepted. The items we sell are accurately described to the best of our ability. If a unit has never been opened, the buyer takes full responsibility for the item at the time of purchase. www.precisionclassic.com will not be held responsible for manufacturing defects or shortages on unopened items. If the condition of an unopened item is a concern, we will open an unopened box to check its condition and completeness. This will only be done by request on a prepaid item. If you feel the item you received was not accurately described please contact us at 636-221-2591 for a resolution.<br>
-		<br>
-		<b>SHIPPING</b> - All items are carefully packaged to insure safe arrival. Typically each item will be wrapped in plastic and then placed in an oversize box with a minimum of two inches of shredded paper to cushion and protect the replica. All items are shipped fully insured via FedEx unless another carrier is requested. Please provide us with an physical address that will have someone available to sign for the package.<br>
-		<br>
-		<b>INTERNATIONAL ORDERS</b> - The web site is not capable of calculating shipping outside the main 48 US States. We encourage our customers outside the 48 states to contact us for a shipping quote.<br>
-		<br>
-		<b>BUY,SELL,TRADE</b> - Have a collection to sell? Have extras to barter with? Please contact us at 636-221-2591
-	</footer><br>
-	<h1 align="center">1-636-221-2591</h1>
-	<h2 align="center">precisionclassic@schweissguth.com</h2>
-</body>
+                  var form = document.createElement("FORM");
+
+                  if (isNaN(item.gsx$amount.$t) == true) {
+                    form.innerHTML = item.gsx$amount.$t;
+                  } else {
+                    cell0.innerHTML += ' <b>$' + item.gsx$amount.$t + '</b>';
+
+                    form.action = "https://www.paypal.com/cgi-bin/webscr";
+                    form.method = "post";
+                    form.target = "paypal";
+
+                    var alt = document.createElement("INPUT");
+                    alt.type = "image";
+                    alt.src = "https://www.paypal.com/en_US/i/btn/x-click-but22.gif";
+                    alt.alt = "Make payments with PayPal - it is fast, free and secure!";
+                    alt.name = "I8";
+                    form.appendChild(alt);
+
+                    var add = document.createElement("INPUT");
+                    add.name = "add";
+                    add.type = "hidden";
+                    add.value = "1";
+                    form.appendChild(add);
+
+                    var cmd = document.createElement("INPUT");
+                    cmd.name = "cmd";
+                    cmd.type = "hidden";
+                    cmd.value = "_cart";
+                    form.appendChild(cmd);
+
+                    var business = document.createElement("INPUT");
+                    business.name = "business";
+                    business.type = "hidden";
+                    business.value = "precisionclassic@schweissguth.com";
+                    form.appendChild(business);
+
+
+                    var itemname = document.createElement("INPUT");
+                    itemname.name = "item_name";
+                    itemname.type = "hidden";
+                    itemname.value = item.gsx$itemname.$t;
+                    form.appendChild(itemname);
+
+                    var itemnumber = document.createElement("INPUT");
+                    itemnumber.name = "item_number";
+                    itemnumber.type = "hidden";
+                    itemnumber.value = item.gsx$itemnumber.$t;
+                    form.appendChild(itemnumber);
+
+                    var amount = document.createElement("INPUT");
+                    amount.name = "amount";
+                    amount.type = "hidden";
+                    amount.value = item.gsx$amount.$t;
+                    form.appendChild(amount);
+
+                    var nonote = document.createElement("INPUT");
+                    nonote.name = "no_note";
+                    nonote.type = "hidden";
+                    nonote.value = "1";
+                    form.appendChild(nonote);
+
+                    var currencycode = document.createElement("INPUT");
+                    currencycode.name = "currency_code";
+                    currencycode.type = "hidden";
+                    currencycode.value = "USD";
+                    form.appendChild(currencycode);
+
+                    var lc = document.createElement("INPUT");
+                    lc.name = "lc";
+                    lc.type = "hidden";
+                    lc.value = "US";
+                    form.appendChild(lc);
+
+                    var weight = document.createElement("INPUT");
+                    weight.name = "weight";
+                    weight.type = "hidden";
+                    weight.value = item.gsx$weight.$t;
+                    form.appendChild(weight);
+
+                    var weightunit = document.createElement("INPUT");
+                    weightunit.name = "weight_unit";
+                    weightunit.type = "hidden";
+                    weightunit.value = "lbs";
+                    form.appendChild(weightunit);
+
+
+                  }
+
+
+
+                  cell1.appendChild(form);
+                  cell1.className = "cell1";
+
+
+                  id.appendChild(table);
+                  //id.appendChild(document.createElement("BR"));
+
+
+                }
+              } catch (err) {} finally {
+                //   console.log(table)
+              }
+            }
+
+          });
+        });
+      });
+
+    </script>
+  </body>
+
+
 </html>
