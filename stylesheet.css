@@ -98,6 +98,10 @@ footer {
 	margin: auto;
 }
 
+img {
+	max-width:100%;
+}
+
 a#jd {color: green;}
 a#caseih {color: red;}
 a#agco {color: orange;}
