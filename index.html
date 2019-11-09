@@ -596,17 +596,16 @@
               table.className = "listing";
             } else {
               try {
-              	document.getElementById("updatedate").innerText = entry[0].gsx$text.$t
+              	//document.getElementById("updatedate").innerText = entry[0].gsx$text.$t
                 var row = table.insertRow();
                 var cell0 = row.insertCell(0)
 
               //  var txt = item.gsx$text.$t.toLowerCase().replace(/ /g, '');
                 if (!item.gsx$amount.$t) {
                   //console.log(txt);
-                  //id.innerHTML = "";
-                  cell0.innerHTML = item.gsx$text.$t;
-                  cell0.className = "soldout";
-                  id.appendChild(table);
+                  id.innerHTML = item.gsx$text.$t;
+                  //cell0.className = "soldout";
+                  //id.appendChild(table);
                 } else {
                   cell0.className = "cell0";
 
