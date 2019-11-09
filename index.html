@@ -586,8 +586,7 @@
           console.log(entry);
           var id;
           var table;
-          document.getElementById("updatedate").innerText = entry[0].gsx$updatedate.$t
-
+          
           entry.forEach(function(item, index) {
 
             if (item.gsx$id.$t) {
@@ -597,6 +596,7 @@
               table.className = "listing";
             } else {
               try {
+              	document.getElementById("updatedate").innerText = entry[0].gsx$text.$t
                 var row = table.insertRow();
                 var cell0 = row.insertCell(0)
 
