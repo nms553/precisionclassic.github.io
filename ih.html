@@ -9,7 +9,7 @@
     <meta content="en-us" http-equiv="Content-Language">
     <meta content="blank 1110" name="Microsoft Theme">
 
-    <title>www.precisionclassic.com - New and retired John Deere Precision Classics</title>
+    <title>Case IH Precision Classics: New and Retired</title>
 
     <link rel="stylesheet" type="text/css" href="./web/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="./web/ih.css">
@@ -438,14 +438,13 @@
 
     <script>
       $(function() {
-        var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1IOCHQu-gHoDctHqFTMVjat7UlaJ7LXuV6vCJuNdoBnY/2/public/full?alt=json';
+        var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1IOCHQu-gHoDctHqFTMVjat7UlaJ7LXuV6vCJuNdoBnY/1/public/full?alt=json';
         $.getJSON(sheetUrl, function(data) {
           entry = data.feed.entry;
           console.log(entry);
           var id;
           var table;
-          $(updatedate).html(entry[0].gsx$updatedate.$t);
-
+          
           entry.forEach(function(item, index) {
 
             if (item.gsx$id.$t) {
@@ -455,16 +454,16 @@
               table.className = "listing";
             } else {
               try {
+              	//document.getElementById("updatedate").innerText = entry[0].gsx$text.$t
                 var row = table.insertRow();
                 var cell0 = row.insertCell(0)
 
-             //   var txt = item.gsx$text.$t.toLowerCase().replace(/ /g, '');
+              //  var txt = item.gsx$text.$t.toLowerCase().replace(/ /g, '');
                 if (!item.gsx$amount.$t) {
                   //console.log(txt);
-                  //id.innerHTML = "";
-                  cell0.innerHTML = item.gsx$text.$t;
-                  cell0.className = "soldout";
-                  id.appendChild(table);
+                  id.innerHTML = item.gsx$text.$t;
+                  //cell0.className = "soldout";
+                  //id.appendChild(table);
                 } else {
                   cell0.className = "cell0";
 
