@@ -48,10 +48,6 @@ go {
 	color: rgb(128, 128, 0);
 	font-weight: bold;
 }
-sp {
-	color: rgb(255, 0, 0);
-	font-weight: bold;
-}
 footer {
 	font-size: 0.75em;
 	text-align: justify;
